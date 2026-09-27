@@ -100,6 +100,8 @@ html.dys .legal,html.dys .prep,html.dys .byline{text-align:left !important;lette
 html.dys #dyslexiaBtn{background:#fff;color:#10151E;border-color:#fff;}
 
 .iconbtn:hover{background:rgba(255,255,255,.2);}
+#downloadsBtn{text-decoration:none;display:inline-block;white-space:nowrap;}
+@media (max-width:560px){.appbar-row{gap:6px}.appbar-row .iconbtn{padding:7px 8px}#downloadsBtn .dl-lbl{display:none}#downloadsBtn{font-size:16px;padding:6px 9px}}
 
 /* CONTROLS */
 .controls{position:sticky;top:0;z-index:70;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0;}
@@ -509,6 +511,7 @@ html.a5 .ct label input,html.a5 .ct label select{font-size:12px;}
       <span class="bwordmark">Kuwait Pediatric Council<small>COMMON &amp; EMERGENCY CARE</small></span>
     </div>
     <div class="grow"></div>
+    <a class="iconbtn" id="downloadsBtn" href="https://kpc-guide.com/downloads/" title="Download the full guide: A4, A5, Phone PDF, EPUB, HTML" aria-label="Downloads">⤓<span class="dl-lbl"> Downloads</span></a>
     <button class="iconbtn" id="dyslexiaBtn" aria-pressed="false" title="Dyslexia-friendly reading mode">Aa Dyslexia</button>
     <button class="iconbtn" id="themeBtn">◐ Theme</button>
     <button class="iconbtn" id="printBtn">⎙ PDF</button>
