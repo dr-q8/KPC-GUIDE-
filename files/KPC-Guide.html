@@ -101,8 +101,10 @@ html.dys #dyslexiaBtn{background:#fff;color:#10151E;border-color:#fff;}
 
 .iconbtn:hover{background:rgba(255,255,255,.2);}
 #downloadsBtn{text-decoration:none;display:inline-block;white-space:nowrap;}
-@media (max-width:340px){#downloadsBtn .dl-lbl{display:none!important}}
-@media (max-width:560px){.appbar-row{gap:4px;padding-left:12px;padding-right:12px}.appbar-row .iconbtn{padding:7px 6px}#downloadsBtn{text-align:center;line-height:1.25}#downloadsBtn .dl-lbl{display:block;white-space:nowrap;word-break:keep-all}}
+.appbar-row .iconbtn{white-space:nowrap;line-height:18px;vertical-align:middle}
+@media (max-width:560px){.appbar-row{gap:6px;padding-left:12px;padding-right:12px}.appbar-row .iconbtn{padding:7px 9px}}
+@media (max-width:400px){.appbar-row{gap:4px}.appbar-row .iconbtn{padding:7px 7px}}
+@media (max-width:345px){#downloadsBtn .dl-lbl,#dyslexiaBtn .bt-lbl,#themeBtn .bt-lbl{display:none}}
 
 /* CONTROLS */
 .controls{position:sticky;top:0;z-index:70;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0;}
@@ -512,10 +514,9 @@ html.a5 .ct label input,html.a5 .ct label select{font-size:12px;}
       <span class="bwordmark">Kuwait Pediatric Council<small>COMMON &amp; EMERGENCY CARE</small></span>
     </div>
     <div class="grow"></div>
-    <a class="iconbtn" id="downloadsBtn" href="https://kpc-guide.com/downloads/" title="Download the full guide: A4, A5, Phone PDF, EPUB, HTML" aria-label="Downloads">⤓<span class="dl-lbl"> Downloads</span></a>
-    <button class="iconbtn" id="dyslexiaBtn" aria-pressed="false" title="Dyslexia-friendly reading mode">Aa Dyslexia</button>
-    <button class="iconbtn" id="themeBtn">◐ Theme</button>
-    <button class="iconbtn" id="printBtn">⎙ PDF</button>
+    <a class="iconbtn" id="downloadsBtn" href="https://kpc-guide.com/downloads/" title="Download the full guide: A4, A5 and Phone PDF, EPUB, HTML" aria-label="Download">⤓<span class="dl-lbl"> Download</span></a>
+    <button class="iconbtn" id="dyslexiaBtn" aria-pressed="false" title="Dyslexia-friendly reading mode" aria-label="Dyslexia-friendly reading mode">Aa<span class="bt-lbl"> Dyslexia</span></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Theme">◐<span class="bt-lbl"> Theme</span></button>
   </div>
 </header>
 
@@ -6533,7 +6534,6 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   document.getElementById('expandAll').addEventListener('click',function(){ cards.forEach(function(c){ if(c.style.display!=='none') c.classList.add('open'); }); });
   document.getElementById('collapseAll').addEventListener('click',function(){ cards.forEach(function(c){ c.classList.remove('open'); }); });
   document.getElementById('themeBtn').addEventListener('click',function(){ var r=document.documentElement; r.setAttribute('data-theme', r.getAttribute('data-theme')==='dark'?'light':'dark'); });
-  document.getElementById('printBtn').addEventListener('click',function(){ cards.forEach(function(c){c.classList.add('open');}); window.print(); });
   (function(){var root=document.documentElement,db=document.getElementById('dyslexiaBtn');function setDys(on){root.classList.toggle('dys',on);if(db)db.setAttribute('aria-pressed',on?'true':'false');try{localStorage.setItem('kpc-dys',on?'1':'0');}catch(e){}}try{if(localStorage.getItem('kpc-dys')==='1')setDys(true);}catch(e){}if(db)db.addEventListener('click',function(){setDys(!root.classList.contains('dys'));});})();
   var fab=document.getElementById('fab');
   window.addEventListener('scroll',function(){ if(window.scrollY>500) fab.classList.add('show'); else fab.classList.remove('show'); });
