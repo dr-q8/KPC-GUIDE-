@@ -62,7 +62,7 @@ a{color:inherit;}
 .wrap{max-width:1000px;margin:0 auto;padding:0 18px;}
 
 /* APP BAR */
-.appbar{position:sticky;top:0;z-index:80;background:linear-gradient(135deg,#10151E,#1C2737);color:#fff;}
+.appbar{position:relative;z-index:80;background:linear-gradient(135deg,#10151E,#1C2737);color:#fff;}
 .spectrum{height:5px;background:linear-gradient(90deg,var(--resus) 0 7.14%,var(--card-c) 7.14% 14.29%,var(--resp) 14.29% 21.43%,var(--neuro) 21.43% 28.57%,var(--endo) 28.57% 35.71%,var(--neo) 35.71% 42.86%,var(--surg) 42.86% 50%,var(--common) 50% 57.14%,var(--renal) 57.14% 64.29%,var(--rheum) 64.29% 71.43%,var(--heme) 71.43% 78.57%,var(--behav) 78.57% 85.71%,var(--tox) 85.71% 92.86%,var(--gi) 92.86% 100%);}
 .appbar-row{display:flex;align-items:center;gap:12px;padding:11px 18px;max-width:1000px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:10px;}
@@ -92,11 +92,21 @@ html.phone .rv-grid{grid-template-columns:1fr;}
 .appbar-row .grow{flex:1;}
 .iconbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:9px;padding:7px 11px;font-size:13px;cursor:pointer;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;}
 /* Dyslexia-friendly reading mode */
-html.dys .card-body,html.dys .oneline,html.dys .sub{font-family:Verdana,Tahoma,'Trebuchet MS',system-ui,sans-serif;}
-html.dys .card-body,html.dys .card-body li,html.dys .card-body p,html.dys .oneline,html.dys .fbox,html.dys .recog,html.dys .flag,html.dys .pearl,html.dys .avail,html.dys .medsh,html.dys .branch{letter-spacing:.035em;word-spacing:.16em;line-height:1.85 !important;text-align:left !important;}
-html.dys .card-body li{margin-bottom:.4em;}
+/* Dyslexia reading mode — evidence-based settings:
+   plain sans-serif (special dyslexia fonts give no benefit: Kuster 2018; Wery 2017; Azzarello 2026 meta-analysis);
+   wider letter spacing WITH proportionally wider word spacing (Zorzi 2012 PNAS; Marinus 2016; Galliussi 2020);
+   shorter lines (Schneps 2013); no italics (Duranovic 2018); cream background, left-aligned, 1.5+ line height (BDA Dyslexia Style Guide). */
+html.dys .card-body,html.dys .oneline,html.dys .sub{font-family:Verdana,Arial,Tahoma,system-ui,sans-serif;}
+html.dys .card-body{font-size:16.5px;}
+html.dys .card-body,html.dys .card-body li,html.dys .card-body p,html.dys .oneline,html.dys .fbox,html.dys .recog,html.dys .flag,html.dys .pearl,html.dys .avail,html.dys .medsh,html.dys .branch{letter-spacing:.1em;word-spacing:.3em;line-height:1.65 !important;text-align:left !important;hyphens:none;-webkit-hyphens:none;}
+html.dys .card-body p,html.dys .card-body li,html.dys .oneline{max-width:66ch;}
+html.dys .card-body p{margin-bottom:1em;}
+html.dys .card-body li{margin-bottom:.6em;}
+html.dys .card-body em,html.dys .card-body i,html.dys .oneline em,html.dys .oneline i{font-style:normal;font-weight:700;}
+html.dys .d,html.dys .card-body table,html.dys .card-body td,html.dys .card-body th{font-family:Verdana,Arial,sans-serif;letter-spacing:.04em;word-spacing:.12em;}
 html.dys .d{font-family:ui-monospace,'IBM Plex Mono',monospace;word-spacing:normal;}
-html.dys .legal,html.dys .prep,html.dys .byline{text-align:left !important;letter-spacing:.02em;line-height:1.7;}
+html.dys .legal,html.dys .prep,html.dys .byline{text-align:left !important;letter-spacing:.05em;word-spacing:.16em;line-height:1.7;}
+html.dys:not([data-theme="dark"]){--paper:#FBF8F1;--bg:#F2EEE4;--ink:#1F2530;}
 html.dys #dyslexiaBtn{background:#fff;color:#10151E;border-color:#fff;}
 
 .iconbtn:hover{background:rgba(255,255,255,.2);}
@@ -285,6 +295,16 @@ a.xref:hover{text-decoration-style:solid;background:var(--c-soft,transparent);}
 .meds .drug{font-weight:600;hyphens:manual;-webkit-hyphens:manual;overflow-wrap:anywhere;}
 
 .tbl td,.tbl th{overflow-wrap:normal;word-break:normal;hyphens:none;-webkit-hyphens:none;}
+/* Phones: stack dose-table rows so drug names and doses are never split mid-word */
+@media screen and (max-width:560px){
+  table.meds.stack,table.meds.stack tbody,table.meds.stack tr,table.meds.stack td{display:block;width:auto !important;}
+  table.meds.stack thead{display:none;}
+  table.meds.stack tr{border-bottom:1px solid var(--line);padding:4px 0 6px;}
+  table.meds.stack td{border-bottom:0;padding:3px 10px;}
+  table.meds.stack td:first-child{padding-top:7px;font-size:13.5px;}
+  table.meds.stack td.drug{overflow-wrap:normal !important;}
+  table.meds.stack td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-family:'Barlow Semi Condensed',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1px;}
+}
 /* Never hyphenate or split words mid-line anywhere in the guide; only long reference URLs may wrap */
 *{hyphens:none !important;-webkit-hyphens:none !important;-moz-hyphens:none !important;}
 /* Exception: drug-name cells may break only at an explicit soft hyphen (&shy;) placed by the editor, else wrap anywhere rather than overflow */
@@ -523,8 +543,8 @@ html.a5 .ct label input,html.a5 .ct label select{font-size:12px;}
 <div class="controls">
   <div class="wrap">
     <div class="searchbox">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input id="search" type="search" placeholder="Search a condition, drug or symptom…" autocomplete="off">
+      <button type="button" id="searchGo" aria-label="Search" title="Search" style="background:none;border:0;padding:4px;margin:-4px;color:inherit;cursor:pointer;display:flex"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      <input id="search" type="search" enterkeyhint="search" placeholder="Search a condition, drug or symptom…" autocomplete="off" aria-label="Search the guide">
     </div>
     <div class="chips" id="chips">
       <button class="chip active" data-cat="all">All</button>
@@ -6463,11 +6483,50 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   var countEl = document.getElementById('count');
   var activeCat = 'all';
 
+  // Search normalisation: case, accents, soft/non-breaking hyphens, UK/US spelling
+  var SYN = [['paracetamol','acetaminophen'],['adrenaline','epinephrine'],['noradrenaline','norepinephrine'],
+    ['salbutamol','albuterol'],['frusemide','furosemide'],['lignocaine','lidocaine'],['phenobarbitone','phenobarbital'],
+    ['amoxycillin','amoxicillin'],['glucose','dextrose'],['keppra','levetiracetam'],['epipen','epinephrine auto'],
+    ['glyceryl trinitrate','nitroglycerin'],['tumour','tumor'],['centre','center'],['behaviour','behavior'],['colour','color'],['ors','oral rehydration'],['gtn','nitroglycerin']];
+  function norm(s){
+    s = (s||'').toLowerCase();
+    if(s.normalize) s = s.normalize('NFKD').replace(/[\u0300-\u036f]/g,'');
+    return s.replace(/\u00ad/g,'').replace(/[\u2010-\u2015\u2212-]/g,' ').replace(/[\u00a0\s]+/g,' ')
+            .replace(/ae/g,'e').replace(/oe/g,'e');
+  }
+  var NSYN = SYN.map(function(p){ return [norm(p[0]), norm(p[1])]; });
+  function termOk(text, t){
+    if(text.indexOf(t)>-1) return true;
+    for(var i=0;i<NSYN.length;i++){
+      if(t===NSYN[i][0] && text.indexOf(NSYN[i][1])>-1) return true;
+      if(t===NSYN[i][1] && text.indexOf(NSYN[i][0])>-1) return true;
+    }
+    return false;
+  }
+  function matches(text, q){
+    if(termOk(text, q)) return true;                       // whole phrase
+    var terms = q.split(' ').filter(function(t){ return t.length>0; });
+    return terms.length>1 && terms.every(function(t){ return termOk(text, t); });   // every word, any order
+  }
+
   cards.forEach(function(c){
     var b = c.querySelector('.card-body');
     c._text = ((c.querySelector('h3')?c.querySelector('h3').textContent:'') + ' ' +
       (c.querySelector('.oneline')?c.querySelector('.oneline').textContent:'') + ' ' +
-      (c.getAttribute('data-search')||'') + ' ' + (b?b.textContent:'')).toLowerCase();
+      (c.getAttribute('data-search')||'') + ' ' + (b?b.textContent:''));
+    c._text = ' ' + norm(c._text) + ' ';
+  });
+
+  // Dose tables: label each cell with its column header (used by the stacked phone layout)
+  document.querySelectorAll('table.meds').forEach(function(t){
+    var ths = t.querySelectorAll('thead th'); if(!ths.length) return;
+    var labels = Array.prototype.map.call(ths, function(th){ return th.textContent.trim(); });
+    var ok = true;
+    t.querySelectorAll('tbody tr').forEach(function(tr){
+      if(tr.querySelector('[colspan],[rowspan]') || tr.children.length!==labels.length){ ok=false; return; }
+      Array.prototype.forEach.call(tr.children, function(td,i){ td.setAttribute('data-label', labels[i]); });
+    });
+    if(ok) t.classList.add('stack');
   });
 
   document.querySelectorAll('.card-head').forEach(function(h){
@@ -6486,7 +6545,8 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
     }
     target.style.display='';
     target.classList.add('open');
-    target.scrollIntoView({behavior:'smooth', block:'start'});
+    var _ctl=document.querySelector('.controls');
+    window.scrollTo({top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - (_ctl?_ctl.offsetHeight:0) - 8), behavior:'smooth'});
     target.classList.add('xref-flash');
     setTimeout(function(){ target.classList.remove('xref-flash'); }, 1600);
   }
@@ -6502,13 +6562,13 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   if(location.hash){ var _h=location.hash.replace('#',''); if(document.getElementById(_h)) setTimeout(function(){ gotoCard(_h); }, 120); }
 
   function apply(){
-    var q = search.value.trim().toLowerCase();
+    var q = norm(search.value).trim();
     var visible = 0;
     cards.forEach(function(c){
       var dc = c.getAttribute('data-cat');
       var catOk = (activeCat==='all') ? true : (dc===activeCat);
       if(dc==='all'){ catOk = (activeCat==='all'); } // reference cards only under All
-      var textOk = (q==='') || (c._text.indexOf(q)>-1);
+      var textOk = (q==='') || matches(c._text, q);
       var show = catOk && textOk;
       c.style.display = show ? '' : 'none';
       if(show){ visible++; if(q!=='') c.classList.add('open'); }
@@ -6524,6 +6584,17 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   }
 
   search.addEventListener('input', apply);
+  function showFirstResult(){
+    apply();
+    var first = cards.filter(function(c){ return c.style.display!=='none'; })[0] || noresult;
+    search.blur();                                              // close the phone keyboard
+    var ctl = document.querySelector('.controls');
+    var y = first.getBoundingClientRect().top + window.scrollY - (ctl ? ctl.offsetHeight : 0) - 8;
+    window.scrollTo({top: Math.max(0,y), behavior:'smooth'});
+  }
+  search.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); showFirstResult(); } });
+  var sbtn = document.getElementById('searchGo');
+  if(sbtn) sbtn.addEventListener('click', function(){ if(search.value.trim()==='') search.focus(); else showFirstResult(); });
   chips.forEach(function(ch){
     ch.addEventListener('click', function(){
       chips.forEach(function(x){x.classList.remove('active');});
