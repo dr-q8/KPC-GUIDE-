@@ -310,6 +310,15 @@ a.xref:hover{text-decoration-style:solid;background:var(--c-soft,transparent);}
   table.meds.stack td.drug{overflow-wrap:normal !important;}
   table.meds.stack td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-family:'Barlow Semi Condensed',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1px;}
 }
+#sresults{display:none;margin:12px 0 4px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+#sresults .sr-head{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 14px 5px;}
+#sresults .sr-item{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:9px 14px;cursor:pointer;color:var(--ink);font:inherit;}
+#sresults .sr-item:active,#sresults .sr-item:hover{background:var(--bg);}
+#sresults .sr-t{display:block;font-weight:700;font-size:14.5px;line-height:1.3;}
+#sresults .sr-s{display:block;font-size:12px;color:var(--muted);margin-top:1px;}
+#sresults .sr-top .sr-t::after{content:'  · best match';font-weight:600;font-size:11.5px;color:var(--muted);}
+#sresults .sr-more{border-top:1px solid var(--line);padding:8px 14px;font-size:12.5px;color:var(--muted);}
+@media print{#sresults{display:none !important;}}
 /* Never hyphenate or split words mid-line anywhere in the guide; only long reference URLs may wrap */
 *{hyphens:none !important;-webkit-hyphens:none !important;-moz-hyphens:none !important;}
 /* Exception: drug-name cells may break only at an explicit soft hyphen (&shy;) placed by the editor, else wrap anywhere rather than overflow */
@@ -6626,7 +6635,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
 
   function apply(){
     var q = norm(search.value).trim();
-    var visible = 0;
+    var visible = 0, hits = [];
     cards.forEach(function(c){
       var dc = c.getAttribute('data-cat');
       var catOk = (activeCat==='all') ? true : (dc===activeCat);
@@ -6634,24 +6643,78 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
       var textOk = (q==='') || matches(c._text, q);
       var show = catOk && textOk;
       c.style.display = show ? '' : 'none';
-      if(show){ visible++; if(q!=='') c.classList.add('open'); }
+      if(show){ visible++; if(q!=='') hits.push(c); }
     });
     sections.forEach(function(s){
       var anyVisible = Array.prototype.some.call(s.querySelectorAll('.card'), function(c){return c.style.display!=='none';});
       s.style.display = anyVisible ? '' : 'none';
     });
+    // non-card blocks (figures, dose calculator) get in the way of results while text-searching
+    sections.forEach(function(s){ Array.prototype.forEach.call(s.children, function(el){
+      if(!el.classList.contains('card') && !el.classList.contains('sec-head')) el.style.display = (q!=='') ? 'none' : '';
+    }); });
+    rankCards(q, hits);
     var searching = (q!=='' || activeCat!=='all');
     heroEls.forEach(function(h){ h.style.display = searching ? 'none' : ''; });
     noresult.style.display = (visible===0) ? 'block' : 'none';
     countEl.textContent = searching ? (visible + ' topic' + (visible===1?'':'s') + ' shown') : '';
   }
 
+  // ---- ranked results panel ----
+  var lastHits = [];
+  var panel = document.createElement('div'); panel.id = 'sresults'; panel.setAttribute('role','list');
+  if(sections.length) sections[0].parentNode.insertBefore(panel, sections[0]);
+  function titleOf(c){ var h=c.querySelector('h3'); return h ? h.textContent.replace(/\s+/g,' ').trim() : ''; }
+  function sectionOf(c){ var s=c.closest('.section'), h=s && s.querySelector('.sec-head h2'); return h ? h.textContent.replace(/\s+/g,' ').trim() : ''; }
+  function scoreCard(c, q){
+    var terms = q.split(' ').filter(function(t){ return t; });
+    var t = ' ' + norm(titleOf(c)) + ' ';
+    var head = ' ' + norm((c.querySelector('.oneline')||{}).textContent||'') + ' ' + norm(c.getAttribute('data-search')||'') + ' ';
+    var sc = 0;
+    if(terms.every(function(x){ return termOk(t, x); })) sc += 100;
+    if(t.indexOf(' '+q) > -1) sc += 40;
+    if(terms.every(function(x){ return termOk(head, x); })) sc += 40;
+    terms.forEach(function(x){                                  // how often each word (or its UK/US synonym) occurs
+      var alts=[x]; NSYN.forEach(function(p){ if(p[0]===x) alts.push(p[1]); if(p[1]===x) alts.push(p[0]); });
+      var n=0; alts.forEach(function(a){ var i=-1; while((i = c._text.indexOf(a, i+1)) > -1 && n < 25) n++; });
+      sc += n;
+    });
+    if(c.getAttribute('data-cat')==='ref' && sc < 100) sc -= 60;
+    return sc;
+  }
+  function openCard(c){
+    c.style.display=''; c.classList.add('open');
+    var ctl = document.querySelector('.controls');
+    window.scrollTo({top: Math.max(0, c.getBoundingClientRect().top + window.scrollY - (ctl ? ctl.offsetHeight : 0) - 8), behavior:'smooth'});
+  }
+  function rankCards(q, hits){
+    cards.forEach(function(c){ if(c._so){ c.classList.remove('open'); c._so = false; } });
+    if(q===''){ lastHits = []; panel.style.display='none'; panel.innerHTML=''; return; }
+    hits.forEach(function(c){ c._sc = scoreCard(c, q); });
+    lastHits = hits.slice().sort(function(a,b){ return b._sc - a._sc; });
+    if(lastHits[0] && !lastHits[0].classList.contains('open')){ lastHits[0].classList.add('open'); lastHits[0]._so = true; }
+    panel.innerHTML = '';
+    if(!lastHits.length){ panel.style.display='none'; return; }
+    var head = document.createElement('div'); head.className='sr-head';
+    head.textContent = 'Best matches — tap to open'; panel.appendChild(head);
+    lastHits.slice(0, 10).forEach(function(c, i){
+      var a = document.createElement('button'); a.type='button'; a.className='sr-item'+(i===0?' sr-top':'');
+      var b1=document.createElement('span'); b1.className='sr-t'; b1.textContent=titleOf(c);
+      var b2=document.createElement('span'); b2.className='sr-s'; b2.textContent=sectionOf(c);
+      a.appendChild(b1); a.appendChild(b2);
+      a.addEventListener('click', function(){ search.blur(); openCard(c); });
+      panel.appendChild(a);
+    });
+    if(lastHits.length > 10){ var more=document.createElement('div'); more.className='sr-more'; more.textContent='+ '+(lastHits.length-10)+' more topics below'; panel.appendChild(more); }
+    panel.style.display='block';
+  }
   search.addEventListener('input', apply);
   function showFirstResult(){
     apply();
-    var first = cards.filter(function(c){ return c.style.display!=='none'; })[0] || noresult;
+    var first = lastHits[0];
     search.blur();
-    var ctl = document.querySelector('.controls');
+    if(first){ openCard(first); return; }
+    var ctl = document.querySelector('.controls'); first = noresult;
     window.scrollTo({top: Math.max(0, first.getBoundingClientRect().top + window.scrollY - (ctl ? ctl.offsetHeight : 0) - 8), behavior:'smooth'});
   }
   search.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); showFirstResult(); } });
