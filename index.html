@@ -322,6 +322,11 @@ a.xref:hover{text-decoration-style:solid;background:var(--c-soft,transparent);}
 #sresults .sr-top .sr-t::after{content:'  · best match';font-weight:600;font-size:11.5px;color:var(--muted);}
 #sresults .sr-more{border-top:1px solid var(--line);padding:8px 14px;font-size:12.5px;color:var(--muted);}
 @media print{#sresults{display:none !important;}}
+#kpc-upd{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:200;display:flex;align-items:center;gap:12px;justify-content:space-between;background:#10151E;color:#fff;border-radius:12px;padding:11px 14px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:14px;}
+#kpc-upd button{background:#fff;color:#10151E;border:0;border-radius:8px;padding:7px 14px;font-weight:700;cursor:pointer;}
+#kpc-ver{font-size:12px;opacity:.75;margin-top:10px;}
+#kpc-ver button{background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;}
+@media print{#kpc-upd,#kpc-ver{display:none !important;}}
 /* Never hyphenate or split words mid-line anywhere in the guide; only long reference URLs may wrap */
 *{hyphens:none !important;-webkit-hyphens:none !important;-moz-hyphens:none !important;}
 /* Exception: drug-name cells may break only at an explicit soft hyphen (&shy;) placed by the editor, else wrap anywhere rather than overflow */
@@ -7116,6 +7121,41 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
     navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).catch(function(){});
+    (function kpcUpdateCheck(){
+      var sw = navigator.serviceWorker, hadCtl = !!sw.controller, reloading = false, shownAt = Date.now(), userAsked = false;
+      function check(){ return sw.getRegistration().then(function(r){ return r ? r.update().then(function(){ return r; }) : null; }).catch(function(){ return null; }); }
+      function banner(){
+        if(document.getElementById('kpc-upd')) return;
+        var b = document.createElement('div'); b.id = 'kpc-upd';
+        b.innerHTML = '<span>A new version of the guide is ready.</span><button type="button">Update</button>';
+        b.querySelector('button').addEventListener('click', function(){ location.reload(); });
+        document.body.appendChild(b);
+      }
+      // a new version has taken over: switch to it (reload) if the app was just opened, otherwise offer it
+      sw.addEventListener('controllerchange', function(){
+        if(!hadCtl || reloading) return;
+        if(userAsked || Date.now() - shownAt < 15000){ reloading = true; location.reload(); } else banner();
+      });
+      document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible'){ shownAt = Date.now(); check(); } });
+      window.addEventListener('pageshow', function(e){ if(e.persisted){ shownAt = Date.now(); check(); } });
+      setInterval(check, 15*60*1000);
+      // footer: which version is running + manual check (home-screen apps have no reload button)
+      if(location.protocol.indexOf('http') !== 0) return;
+      (document.readyState === 'complete' ? function(fn){ fn(); } : function(fn){ window.addEventListener('load', fn); })(function(){
+        var f = document.querySelector('footer'); if(!f || !window.caches) return;
+        var line = document.createElement('p'); line.id = 'kpc-ver';
+        var label = document.createElement('span'), btn = document.createElement('button'); btn.type = 'button'; btn.textContent = 'Check for updates';
+        line.appendChild(label); line.appendChild(document.createTextNode(' · ')); line.appendChild(btn); f.appendChild(line);
+        function showVer(){ caches.keys().then(function(ks){ var k = ks.filter(function(x){ return /^kpc-ce-/.test(x); }).sort().pop(); label.textContent = 'App version ' + (k ? k.replace(/^.*-(r\d+)$/, '$1') : '—'); }); }
+        showVer();
+        btn.addEventListener('click', function(){
+          userAsked = true; btn.disabled = true; btn.textContent = 'Checking…';
+          check().then(function(r){
+            setTimeout(function(){ if(!reloading){ btn.disabled = false; btn.textContent = (r && (r.installing || r.waiting)) ? 'Updating…' : 'Up to date ✓'; showVer(); setTimeout(function(){ btn.textContent = 'Check for updates'; userAsked = false; }, 4000); } }, 2500);
+          });
+        });
+      });
+    })();
   });
 }
 </script>
