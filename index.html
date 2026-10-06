@@ -324,9 +324,27 @@ a.xref:hover{text-decoration-style:solid;background:var(--c-soft,transparent);}
 @media print{#sresults{display:none !important;}}
 #kpc-upd{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:200;display:flex;align-items:center;gap:12px;justify-content:space-between;background:#10151E;color:#fff;border-radius:12px;padding:11px 14px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:14px;}
 #kpc-upd button{background:#fff;color:#10151E;border:0;border-radius:8px;padding:7px 14px;font-weight:700;cursor:pointer;}
-#kpc-ver{font-size:12px;opacity:.75;margin-top:10px;}
-#kpc-ver button{background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;}
-@media print{#kpc-upd,#kpc-ver{display:none !important;}}
+/* version line: top of the guide (hero) and bottom (footer) */
+.kpc-version{display:inline-flex;flex-wrap:wrap;align-items:baseline;column-gap:2px;row-gap:2px;margin:6px 0 12px;padding:8px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font-size:18px;line-height:1.35;}
+.kpc-version .kv-l{font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px;}
+.kpc-version .kpc-vnum{font-family:'Barlow Semi Condensed',sans-serif;font-weight:800;font-size:23px;color:var(--resus);}
+.kpc-version .kv-sep{color:var(--muted);white-space:pre;}
+.kpc-version .kv-d{font-weight:600;}
+.kpc-version .kv-extra{display:inline-flex;flex-wrap:wrap;align-items:baseline;}
+.kpc-version .kv-extra > *::before{content:' · ';white-space:pre;color:var(--muted);text-decoration:none;display:inline-block;}
+.kpc-version .kpc-visits b{font-weight:700;}
+.kpc-version .kv-upd{background:none;border:0;padding:0;color:inherit;cursor:pointer;font:inherit;font-size:16px;}
+.kpc-version .kv-upd span{text-decoration:underline;}
+.footer .kpc-version{display:flex;width:fit-content;max-width:100%;margin:14px 0 8px;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.22);color:#fff;}
+.footer .kpc-version .kv-l,.footer .kpc-version .kv-sep,.footer .kpc-version .kv-extra > *::before{color:#9FB2C9;}
+.footer .kpc-version .kpc-vnum{color:#FF8A80;}
+html[data-theme="dark"] .kpc-version .kpc-vnum{color:#FF8A80;}
+@media (max-width:560px){.kpc-version .kv-extra{flex-basis:100%;}.kpc-version .kv-extra > *::before{content:none;}.kpc-version .kv-extra > :not([hidden]) ~ :not([hidden])::before{content:' · ';}}
+@media (max-width:420px){.kpc-version{font-size:16px;padding:7px 12px;}.kpc-version .kpc-vnum{font-size:21px;}}
+html.a5 .kpc-version,html.phone .kpc-version{font-size:14px;padding:5px 11px;}
+html.a5 .kpc-version .kpc-vnum,html.phone .kpc-version .kpc-vnum{font-size:18px;}
+html.a5 .kpc-version .kv-l,html.phone .kpc-version .kv-l{font-size:12px;}
+@media print{#kpc-upd,.kv-extra{display:none !important;}.kpc-version{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 /* calculators are interactive: web/app only — never in print */
 .print-only{display:none;}
 @media print{#sec-calc,.calc-link,.web-only{display:none !important;}span.print-only{display:inline !important;}}
@@ -621,6 +639,7 @@ html.a5 figure.cm-fig svg{width:170mm !important;height:auto;}
   </div>
   <div class="eyebrow">Kuwait Pediatric Council · Bedside reference</div>
   <h1>Pediatric &amp; Neonatal<br>Common &amp; Emergency Care Guide</h1>
+  <div class="kpc-version" id="kpcVerTop"><span class="kv-l">Version</span> <b class="kpc-vnum">r69</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">6 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
   <p>A searchable, algorithmic bedside companion for pediatricians and primary care physicians — every medication listed separately with weight‑based dosing, first- to third‑line therapy, and the can't‑miss diagnoses. Tap any topic to open it.</p>
 
   <div class="byline" style="margin:14px 0 4px;font-size:14px;line-height:1.55;color:#19202B;">
@@ -6278,7 +6297,8 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   <li><b>Swallowed a poison that charcoal binds, and the airway is safe</b> (awake with intact airway reflexes, or already intubated) &rarr; <b>single&#8209;dose activated charcoal</b>, as early as possible: most benefit within 1 h; for many poisons still worthwhile up to 6 h, and later when absorption continues (modified&#8209;release products, tablet masses, very large ingestions).<sup class="cite"><a href="#ref-hoegberg-2026"></a>,<a href="#ref-chyka-2005"></a></sup></li>
   <li><b>Carbamazepine, cardiac glycosides, colchicine, dapsone, phenobarbital, phenytoin, thallium or theophylline</b> &rarr; <b>multiple&#8209;dose activated charcoal</b> to speed elimination, on toxicology advice.<sup class="cite"><a href="#ref-hoegberg-2026"></a>,<a href="#ref-aact-mdac-1999"></a></sup></li>
   <li><b>Substantial iron, lithium or potassium</b>, a <b>sustained&#8209;release or enteric&#8209;coated</b> drug (especially &gt; 2 h after ingestion), or <b>swallowed drug packets</b> (body packing) &rarr; consider <b>WBI</b>: charcoal has no role for iron or lithium, and there are few other ways to empty the gut.<sup class="cite"><a href="#ref-hoegberg-2026"></a>,<a href="#ref-thanacoody-2015"></a>,<a href="#ref-aact-wbi-2004"></a></sup></li>
-  <li><b>Never</b>: pass a nasogastric tube in a child who is not intubated just to give charcoal (intubate for charcoal only if clinically significant toxicity is expected); <b>routine gastric lavage</b> (rarely, if ever, and only by trained staff); <b>ipecac</b> (no benefit; delays charcoal, oral antidotes and WBI).<sup class="cite"><a href="#ref-hoegberg-2026"></a>,<a href="#ref-benson-2013"></a>,<a href="#ref-hojer-2013"></a></sup></li>
+  <li><b>Charcoal and the airway.</b> Not intubated &rarr; give charcoal <b>by mouth only</b>; do <b>not</b> pass a nasogastric tube just to give it. Already intubated for another reason (unprotected airway, respiratory failure, low conscious level, refractory seizures, shock) &rarr; a nasogastric or orogastric tube for charcoal is reasonable. Do <b>not</b> intubate just to give charcoal, unless life&#8209;threatening toxicity is expected; decide with a toxicologist.<sup class="cite"><a href="#ref-hoegberg-2026"></a></sup></li>
+<li><b>Not recommended:</b> <b>routine gastric lavage</b>: should not be used routinely, if ever; if ever considered, only by experienced staff with a protected airway.<sup class="cite"><a href="#ref-benson-2013"></a></sup> <b>Ipecac</b>: no benefit; delays charcoal, oral antidotes and WBI.<sup class="cite"><a href="#ref-hojer-2013"></a></sup></li>
 </ul></div>
 <table class="meds"><thead><tr><th>Method</th><th>Dose / rate</th><th>Use for · do not use</th></tr></thead>
   <tr><td class="drug">Activated charcoal &mdash; single dose</td><td class="d">1 g/kg once<br>max 50 g<br>by mouth; by nasogastric/orogastric tube only if intubated (confirm tube position on X&#8209;ray)<br>additional (second) dose, if advised: same dose<sup class="cite"><a href="#ref-boyle-2009"></a>,<a href="#ref-hoegberg-2026"></a></sup></td><td><b>Use for</b> a potentially toxic amount of a poison that charcoal binds (most drugs), with a safe airway. An <b>additional dose</b> may be advised after carbamazepine, acetaminophen, paraquat, phenobarbital, salicylates, thallium, theophylline, valproic acid or verapamil, modified&#8209;release products, or a dose too large for one charcoal dose. <b>No role</b> (do not give): iron, lithium, alcohols (ethanol, methanol, ethylene glycol), lead, arsenic, copper, caesium, metformin. <b>Do not use</b> if airway reflexes are absent or may be lost (unless intubated), with a risk of bowel perforation, absent peristalsis, likely upper endoscopy (caustics &mdash; see <a class="xref" href="#c-caustic-corrosive-ingestion">Caustic (Corrosive) Ingestion</a>), or a hydrocarbon with high aspiration risk<sup class="cite"><a href="#ref-boyle-2009"></a>,<a href="#ref-hoegberg-2026"></a>,<a href="#ref-chyka-2005"></a></sup></td></tr>
@@ -8410,6 +8430,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   <div class="wrap">
     <strong>Kuwait Pediatric Council</strong>
     <p>Neonatal &amp; pediatric acute care for pediatricians and primary care physicians.</p>
+    <div class="kpc-version" id="kpcVerFoot"><span class="kv-l">Version</span> <b class="kpc-vnum">r69</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">6 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
       <ul><li>Issued October 2026 · review October 2029.</li><li>Compiled from current international guidelines; newer evidence takes precedence before renewal.</li><li>Verify all doses locally and follow Ministry of Health protocols.</li><li>Self‑contained single file — works offline once saved; print to PDF to distribute; add to the home screen for an app‑like experience.</li></ul>
   </div>
 </footer>
@@ -8821,19 +8842,16 @@ if('serviceWorker' in navigator){
       document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible'){ shownAt = Date.now(); check(); } });
       window.addEventListener('pageshow', function(e){ if(e.persisted){ shownAt = Date.now(); check(); } });
       setInterval(check, 15*60*1000);
-      // footer: which version is running + manual check (home-screen apps have no reload button)
+      // footer version line: manual update check (home-screen apps have no reload button)
       if(location.protocol.indexOf('http') !== 0) return;
       (document.readyState === 'complete' ? function(fn){ fn(); } : function(fn){ window.addEventListener('load', fn); })(function(){
-        var f = document.querySelector('footer'); if(!f || !window.caches) return;
-        var line = document.createElement('p'); line.id = 'kpc-ver';
-        var label = document.createElement('span'), btn = document.createElement('button'); btn.type = 'button'; btn.textContent = 'Check for updates';
-        line.appendChild(label); line.appendChild(document.createTextNode(' · ')); line.appendChild(btn); f.appendChild(line);
-        function showVer(){ caches.keys().then(function(ks){ var k = ks.filter(function(x){ return /^kpc-ce-/.test(x); }).sort().pop(); label.textContent = 'App version ' + (k ? k.replace(/^.*-(r\d+)$/, '$1') : '—'); }); }
-        showVer();
+        var f = document.querySelector('#kpcVerFoot .kv-extra'); if(!f) return;
+        var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'kv-upd'; var lbl = document.createElement('span'); lbl.textContent = 'Check for updates'; btn.appendChild(lbl);
+        f.appendChild(btn);
         btn.addEventListener('click', function(){
-          userAsked = true; btn.disabled = true; btn.textContent = 'Checking…';
+          userAsked = true; btn.disabled = true; lbl.textContent = 'Checking…';
           check().then(function(r){
-            setTimeout(function(){ if(!reloading){ btn.disabled = false; btn.textContent = (r && (r.installing || r.waiting)) ? 'Updating…' : 'Up to date ✓'; showVer(); setTimeout(function(){ btn.textContent = 'Check for updates'; userAsked = false; }, 4000); } }, 2500);
+            setTimeout(function(){ if(!reloading){ btn.disabled = false; lbl.textContent = (r && (r.installing || r.waiting)) ? 'Updating…' : 'Up to date ✓'; setTimeout(function(){ lbl.textContent = 'Check for updates'; userAsked = false; }, 4000); } }, 2500);
           });
         });
       });
@@ -9224,5 +9242,22 @@ if('serviceWorker' in navigator){
 })();
 </script>
 <script data-goatcounter="https://kpc-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function kpcVisits(){
+  if(!/(^|\.)kpc-guide\.com$/.test(location.hostname) || !window.fetch) return;
+  var els = document.querySelectorAll('.kpc-visits'); if(!els.length) return;
+  fetch('https://kpc-guide.goatcounter.com/counter/TOTAL.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){
+      var n = d && String(d.count || '').trim(); if(!n || n === '0') return;
+      Array.prototype.forEach.call(els, function(e){
+        e.textContent = '';
+        var b = document.createElement('b'); b.textContent = n;
+        e.appendChild(b); e.appendChild(document.createTextNode(' visits'));
+        e.hidden = false;
+      });
+    }).catch(function(){});
+})();
+</script>
 </body>
 </html>
