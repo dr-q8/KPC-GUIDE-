@@ -121,7 +121,7 @@ html.dys #dyslexiaBtn{background:#fff;color:#10151E;border-color:#fff;}
 @media (max-width:400px){.appbar-row{gap:4px}.appbar-row .iconbtn{padding:7px 7px}}
 @media (max-width:345px){.appbar-row .iconbtn .bt-lbl{display:none}}
 
-/* CONTROLS */
+/* kpc-backjump */ .kpc-back{position:fixed;left:16px;bottom:16px;z-index:61;display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:var(--paper);border:0;border-radius:22px;padding:11px 16px;font:600 15px/1.2 inherit;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;max-width:calc(100vw - 96px);}.kpc-back[hidden]{display:none;}.kpc-back-here{outline:3px solid #F9A825;outline-offset:2px;border-radius:3px;}@media print{.kpc-back{display:none !important;}} /* CONTROLS */
 .controls{position:-webkit-sticky;position:sticky;top:0;z-index:70;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0;}
 .searchbox{display:flex;align-items:center;gap:9px;background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:9px 13px;}
 .searchbox input{border:none;background:none;outline:none;width:100%;font-size:15px;color:var(--ink);font-family:'Inter',sans-serif;}
@@ -697,7 +697,7 @@ html.a5 figure.cm-fig svg{width:170mm !important;height:auto;}
   </div>
   <div class="eyebrow">Kuwait Pediatric Council · Bedside reference</div>
   <h1>Neonatal &amp; Pediatric<br>Common &amp; Emergency Care Guide</h1>
-  <div class="kpc-version" id="kpcVerTop"><span class="kv-l">Version</span> <b class="kpc-vnum">1.76</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">7 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
+  <div class="kpc-version" id="kpcVerTop"><span class="kv-l">Version</span> <b class="kpc-vnum">1.77</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">7 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
   <p>A searchable, algorithmic bedside companion for pediatricians and primary care physicians — every medication listed separately with weight‑based dosing, first- to third‑line therapy, and the can't‑miss diagnoses. Tap any topic to open it.</p>
 
   <div class="byline" style="margin:14px 0 4px;font-size:14px;line-height:1.55;color:#19202B;">
@@ -718,8 +718,8 @@ html.a5 figure.cm-fig svg{width:170mm !important;height:auto;}
   </div>
 
   <div class="prep">
-    <b>Preparation.</b> This guide was drafted, edited, and formatted with the assistance of an AI‑based large language model used under direct human supervision. The tool was not an author and made no clinical judgments. All clinical recommendations, medication names and doses, diagnostic thresholds, and references were written, verified against the primary sources and current guidelines, and approved by the author and the review panel named below, who take full responsibility for the accuracy and integrity of the content. Prepared in line with ICMJE guidance on the use of AI‑assisted technologies and with the Ministry of Health <b>Practical Guide for the Use of Language‑based Artificial Intelligence Tools in Healthcare Practice</b>, adopted and published as a guiding framework for staff of all MOH health facilities by Administrative Decision No. 6189 of 2026 of the Undersecretary of the Ministry of Health (issued under Law No. 70/2020 and Ministerial Decision No. 373/2025 on the code of ethics for health‑sector workers).
-    <div class="confirm"><b>Author:</b> Dr. Athari Almajed — Consultant, General Pediatrics &amp; Pediatric Pulmonology, LTV and Sleep Medicine.<br/><b>Reviewers:</b> the review panel named above — reviewed and approved the final version.<br/>The author and reviewers confirm they have read this version, verified the clinical content and references, and approve it for use.<br/><b>Inquiries, input, or corrections:</b> <a href="mailto:ayalmajed@moh.gov.kw">ayalmajed@moh.gov.kw</a><br/><b>Conflicts of interest:</b> none declared. <b>Funding:</b> none.<br/><b>© 2026 Kuwait Pediatric Council.</b> This guide may be reproduced for non‑commercial educational use with attribution.</div>
+    <b>Preparation.</b> This guide was drafted, edited, and formatted with the assistance of an AI‑based large language model used under direct human supervision. The tool was not an author and made no clinical judgments. All clinical recommendations, medication names and doses, diagnostic thresholds, and references were written by the author, checked against the primary sources and current guidelines, and reviewed by the review panel named below; the content is their work, not the AI tool's. Prepared in line with ICMJE guidance on the use of AI‑assisted technologies and with the Ministry of Health <b>Practical Guide for the Use of Language‑based Artificial Intelligence Tools in Healthcare Practice</b>, adopted and published as a guiding framework for staff of all MOH health facilities by Administrative Decision No. 6189 of 2026 of the Undersecretary of the Ministry of Health (issued under Law No. 70/2020 and Ministerial Decision No. 373/2025 on the code of ethics for health‑sector workers).
+    <div class="confirm"><b>Author:</b> Dr. Athari Almajed — Consultant, General Pediatrics &amp; Pediatric Pulmonology, LTV and Sleep Medicine.<br/><b>Reviewers:</b> the review panel named above — reviewed the final version.<br/>The author and reviewers have read this version and support its use as a reference alongside clinical judgment.<br/>Despite every effort to be precise and accurate, human error may occur; this guide was prepared to the best of our abilities &mdash; please report any error to the address below.<br/><b>Inquiries, input, or corrections:</b> <a href="mailto:ayalmajed@moh.gov.kw">ayalmajed@moh.gov.kw</a><br/><b>Conflicts of interest:</b> none declared. <b>Funding:</b> none.<br/><b>© 2026 Kuwait Pediatric Council.</b> This guide may be reproduced for non‑commercial educational use with attribution.</div>
   </div>
 </section>
 
@@ -1923,7 +1923,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   <div class="card-head"><div class="htext"><div class="titlerow"><h3>Blocked Systemic‑to‑Pulmonary Shunt (BT / Sano)</h3><span class="acuity min">MINUTES</span><span class="ageband">Shunt‑dependent CHD</span></div><p class="oneline">Sudden cyanosis with a <b>lost shunt murmur</b> &mdash; the shunt is occluding; a peripheral‑hospital emergency.</p></div><span class="chev">&#9656;</span></div>
   <div class="card-body">
 
-    <div class="recog"><div class="rh">&#9699; Recognize it &mdash; the shunt is blocking</div><ul class="blist"><li>Known <b>shunt‑dependent</b> cyanotic CHD (modified <b>Blalock&ndash;Taussig</b> or <b>Sano</b> shunt) with <b>acute, severe cyanosis</b>.<sup class="cite"><a href="#ref-rudd-2020"></a>,<a href="#ref-marino-2018"></a></sup></li><li><b>Loss of the continuous shunt murmur</b> (a patent shunt has continuous turbulent flow; an occluded shunt has no flow).<sup class="cite"><a href="#ref-stevenson-1983"></a></sup></li><li><b>Sudden desaturation</b>, then <b>hypotension and metabolic acidosis</b>; falling PaO<sub>2</sub>, rising lactate, falling cerebral NIRS from baseline.<sup class="cite"><a href="#ref-rudd-2020"></a>,<a href="#ref-marino-2018"></a></sup></li><li><b>Echo: reduced or absent flow</b> across the shunt confirms it &mdash; but do <b>not</b> delay treatment for imaging.<sup class="cite"><a href="#ref-marino-2018"></a>,<a href="#ref-stevenson-1983"></a></sup></li></ul></div>
+    <div class="recog"><div class="rh">&#9699; Recognize it &mdash; the shunt is blocking</div><ul class="blist"><li>Known <b>shunt‑dependent</b> cyanotic CHD (modified <b>Blalock&ndash;Taussig</b> or <b>Sano</b> shunt) with <b>acute, severe cyanosis</b>.<sup class="cite"><a href="#ref-rudd-2020"></a>,<a href="#ref-marino-2018"></a></sup> <i>Modified Blalock&ndash;Taussig shunt:</i> a tube graft from the subclavian or innominate artery to the pulmonary artery. <i>Sano shunt:</i> a tube graft from the right ventricle to the pulmonary artery, used in the first‑stage (Norwood) operation for hypoplastic left heart syndrome.<sup class="cite"><a href="#ref-sano-2003"></a>,<a href="#ref-ohye-2010"></a></sup></li><li><b>Loss of the continuous shunt murmur</b> (a patent shunt has continuous turbulent flow; an occluded shunt has no flow).<sup class="cite"><a href="#ref-stevenson-1983"></a></sup></li><li><b>Sudden desaturation</b>, then <b>hypotension and metabolic acidosis</b>; falling PaO<sub>2</sub>, rising lactate, falling cerebral NIRS from baseline.<sup class="cite"><a href="#ref-rudd-2020"></a>,<a href="#ref-marino-2018"></a></sup></li><li><b>Echo: reduced or absent flow</b> across the shunt confirms it &mdash; but do <b>not</b> delay treatment for imaging.<sup class="cite"><a href="#ref-marino-2018"></a>,<a href="#ref-stevenson-1983"></a></sup></li></ul></div>
 
     <div class="flag"><div class="fh">&#9888; Call for help now</div><ul class="blist"><li><b>Call cardiac ICU/PICU + cardiothoracic surgery + cardiology immediately</b>, and activate your retrieval service.<sup class="cite"><a href="#ref-rudd-2020"></a>,<a href="#ref-marino-2018"></a></sup></li><li>The physiology to fix it: <b>drive more blood across the shunt</b> &mdash; <b>raise systemic vascular resistance (SVR)</b> and <b>lower pulmonary vascular resistance (PVR)</b> &mdash; while you <b>anticoagulate</b>.<sup class="cite"><a href="#ref-marino-2018"></a></sup></li></ul></div>
 
@@ -7685,6 +7685,8 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
         <li id="ref-lexicomp-peds">Taketomo CK, Hodding JH, Kraus DM. <i>Pediatric &amp; Neonatal Dosage Handbook.</i> 31st ed. Hudson, OH: Lexicomp (Wolters Kluwer); 2024.</li>
         <li id="ref-rudd-2020">Rudd NA, Ghanayem NS, Hill GD, et al. Interstage home monitoring for infants with single ventricle heart disease: education and management: a scientific statement from the American Heart Association. <i>J Am Heart Assoc.</i> 2020;9(16):e014548. <a href="https://doi.org/10.1161/JAHA.119.014548" target="_blank" rel="noopener">doi:10.1161/JAHA.119.014548</a></li>
         <li id="ref-marino-2018">Marino BS, Tabbutt S, MacLaren G, et al. Cardiopulmonary resuscitation in infants and children with cardiac disease: a scientific statement from the American Heart Association. <i>Circulation.</i> 2018;137(22):e691&ndash;e782. <a href="https://doi.org/10.1161/CIR.0000000000000524" target="_blank" rel="noopener">doi:10.1161/CIR.0000000000000524</a></li>
+        <li id="ref-sano-2003">Sano S, Ishino K, Kawada M, et al. Right ventricle&ndash;pulmonary artery shunt in first-stage palliation of hypoplastic left heart syndrome. <i>J Thorac Cardiovasc Surg.</i> 2003;126(2):504&ndash;510. <a href="https://doi.org/10.1016/S0022-5223(02)73575-7">doi:10.1016/S0022-5223(02)73575-7</a></li>
+        <li id="ref-ohye-2010">Ohye RG, Sleeper LA, Mahony L, et al. Comparison of shunt types in the Norwood procedure for single-ventricle lesions. <i>N Engl J Med.</i> 2010;362(21):1980&ndash;1992. <a href="https://doi.org/10.1056/NEJMoa0912461">doi:10.1056/NEJMoa0912461</a></li>
         <li id="ref-stevenson-1983">Stevenson JG, Kawabori I, Bailey WW. Noninvasive evaluation of Blalock-Taussig shunts: determination of patency and differentiation from patent ductus arteriosus by Doppler echocardiography. <i>Am Heart J.</i> 1983;106(5 Pt 1):1121&ndash;1132. <a href="https://doi.org/10.1016/0002-8703(83)90661-0" target="_blank" rel="noopener">doi:10.1016/0002-8703(83)90661-0</a></li>
         <li id="ref-label-heparin">Heparin Sodium Injection, USP — US prescribing information (Clinical Pharmacology — half-life 0.5–2 h, hepatic/reticuloendothelial clearance; Overdosage — protamine neutralization). Pfizer/Hospira. pfizermedical.com</li>
         <li id="ref-vaughn-2015">Vaughn GR, Moore JW, Mallula KK, Lamberti JJ, El-Said HG. Transcatheter stenting of the systemic-to-pulmonary artery shunt: a 7-year experience from a single tertiary center. <i>Catheter Cardiovasc Interv.</i> 2015;86(3):454&ndash;462. <a href="https://doi.org/10.1002/ccd.25926" target="_blank" rel="noopener">doi:10.1002/ccd.25926</a></li>
@@ -8490,7 +8492,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   <div class="wrap">
     <strong>Kuwait Pediatric Council</strong>
     <p>Neonatal &amp; pediatric acute care for pediatricians and primary care physicians.</p>
-    <div class="kpc-version" id="kpcVerFoot"><span class="kv-l">Version</span> <b class="kpc-vnum">1.76</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">7 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
+    <div class="kpc-version" id="kpcVerFoot"><span class="kv-l">Version</span> <b class="kpc-vnum">1.77</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">7 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
       <ul><li>Issued October 2026 · review October 2029.</li><li>Compiled from current international guidelines; newer evidence takes precedence before renewal.</li><li>Verify all doses locally and follow Ministry of Health protocols.</li><li>Self‑contained single file — works offline once saved; print to PDF to distribute; add to the home screen for an app‑like experience.</li></ul>
   </div>
 </footer>
@@ -8632,7 +8634,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
     });
   });
   window.addEventListener('hashchange', function(){
-    var id=location.hash.replace('#',''); if(id && document.getElementById(id)) gotoCard(id);
+    if(window.__kpcBackNav) return; var id=location.hash.replace('#',''); if(id && document.getElementById(id)) gotoCard(id);
   });
   if(location.hash){ var _h=location.hash.replace('#',''); if(document.getElementById(_h)) setTimeout(function(){ gotoCard(_h); }, 120); }
 
@@ -8827,12 +8829,16 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   (function(){
     var ctl = document.querySelector('.controls'); if(!ctl) return;
     var spacer = document.createElement('div'); spacer.style.display='none'; ctl.parentNode.insertBefore(spacer, ctl.nextSibling);
-    var home = 0, fixedMode = false;
+    var home = 0, fixedMode = false, full = 0;
     function measure(){ if(!fixedMode){ home = ctl.getBoundingClientRect().top + window.scrollY; } document.documentElement.style.setProperty('--ctlh', (ctl.offsetHeight + 10) + 'px'); }
     function onScroll(){
-      var y = window.scrollY;
-      ctl.classList.toggle('ctl-compact', y > home + 40);
-      if(!fixedMode && y > home + 5 && ctl.getBoundingClientRect().top < -2){ fixedMode = true; spacer.style.height = ctl.offsetHeight + 'px'; spacer.style.display = 'block'; ctl.classList.add('ctl-fixed'); }
+      var y = window.scrollY, c = ctl.classList.contains('ctl-compact');
+      // kpc-nojump: compact bar keeps the page still (lost height kept by the spacer) + hysteresis so it cannot flip back and forth
+      if(!c && y > home + 60){ full = full || ctl.offsetHeight; ctl.classList.add('ctl-compact'); c = true; }
+      else if(c && y < home + 8){ ctl.classList.remove('ctl-compact'); c = false; }
+      if(c && !fixedMode){ spacer.style.height = Math.max(0, full - ctl.offsetHeight) + 'px'; spacer.style.display = 'block'; } else if(!fixedMode) spacer.style.display = 'none';
+      if(!c) full = ctl.offsetHeight;
+      if(!fixedMode && y > home + 5 && ctl.getBoundingClientRect().top < -2){ fixedMode = true; spacer.style.height = (full || ctl.offsetHeight) + 'px'; spacer.style.display = 'block'; ctl.classList.add('ctl-fixed'); }
       else if(fixedMode && y <= home){ fixedMode = false; spacer.style.display = 'none'; ctl.classList.remove('ctl-fixed'); }
       document.documentElement.style.setProperty('--ctlh', (ctl.offsetHeight + 10) + 'px');
     }
@@ -9310,6 +9316,43 @@ if('serviceWorker' in navigator){
   }
   if(document.readyState!=='loading') num();
   else document.addEventListener('DOMContentLoaded', num);
+})();
+</script>
+<script>
+/* kpc-backjump: after a jump inside the guide (cross-reference, citation number, map link) a "Back to where you were"
+   button returns to the exact reading spot; each jump is also a history step, so the phone's back button/gesture works. */
+(function(){
+  var stack = [], btn = document.createElement('button');
+  btn.type = 'button'; btn.id = 'kpcBack'; btn.className = 'kpc-back'; btn.hidden = true;
+  btn.innerHTML = '<span aria-hidden="true">↩</span> Back to where you were';
+  document.body.appendChild(btn);
+  function show(){ btn.hidden = !stack.length; }
+  function ctlH(){ var c = document.querySelector('.controls'); return c ? c.offsetHeight : 0; }
+  document.addEventListener('click', function(e){
+    if(e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null; if(!a) return;
+    var id = decodeURIComponent(a.getAttribute('href').slice(1)), t = id && document.getElementById(id);
+    if(!t || t.contains(a)) return;
+    var xref = a.classList.contains('xref');
+    if(!xref && t.offsetParent === null) return;              // hidden target: leave the browser default
+    stack.push({el: a, off: a.getBoundingClientRect().top, y: window.scrollY}); if(stack.length > 30) stack.shift();
+    try { history.pushState({kpcBack: stack.length}, '', '#' + id); } catch(_){}
+    if(!xref){                                                 // citations / map links: scroll here (no extra history step)
+      e.preventDefault();
+      window.scrollTo({top: Math.max(0, t.getBoundingClientRect().top + window.scrollY - ctlH() - 8), behavior: 'smooth'});
+      t.classList.add('xref-flash'); setTimeout(function(){ t.classList.remove('xref-flash'); }, 1600);
+    }
+    show();
+  }, true);
+  function goBack(){
+    var s = stack.pop(); show(); if(!s) return;
+    window.__kpcBackNav = true; setTimeout(function(){ window.__kpcBackNav = false; }, 400);
+    var el = s.el, y = (el && el.offsetParent !== null) ? el.getBoundingClientRect().top + window.scrollY - s.off : s.y;
+    window.scrollTo({top: Math.max(0, y), behavior: 'instant'});
+    if(el){ el.classList.add('kpc-back-here'); setTimeout(function(){ el.classList.remove('kpc-back-here'); }, 1600); }
+  }
+  btn.addEventListener('click', function(){ history.back(); setTimeout(function(){ if(stack.length && !btn._popped) goBack(); btn._popped = false; }, 350); });
+  window.addEventListener('popstate', function(){ if(stack.length){ btn._popped = true; window.__kpcBackNav = true; requestAnimationFrame(goBack); } });
 })();
 </script>
 <script data-goatcounter="https://kpc-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
