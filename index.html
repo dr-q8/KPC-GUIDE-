@@ -705,7 +705,7 @@ html .controls::before{content:'';position:absolute;left:0;right:0;bottom:100%;h
   </div>
   <div class="eyebrow">Kuwait Pediatric Council · Bedside reference</div>
   <h1>Neonatal &amp; Pediatric<br>Common &amp; Emergency Care Guide</h1>
-  <div class="kpc-version" id="kpcVerTop"><span class="kv-l">Version</span> <b class="kpc-vnum">1.85</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">9 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
+  <div class="kpc-version" id="kpcVerTop"><span class="kv-l">Version</span> <b class="kpc-vnum">1.86</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">9 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
   <p>A searchable, algorithmic bedside companion for pediatricians and primary care physicians — every medication listed separately with weight‑based dosing, first- to third‑line therapy, and the can't‑miss diagnoses. Tap any topic to open it.</p>
 
   <div class="byline" style="margin:14px 0 4px;font-size:14px;line-height:1.55;color:#19202B;">
@@ -1361,192 +1361,64 @@ html .controls::before{content:'';position:absolute;left:0;right:0;bottom:100%;h
     <div class="avail"><b>◈ How to use</b><ul class="blist"><li>This routes the commonest bedside <b>presentations</b> to the relevant cards — it is a starting point, not a differential.</li><li>Tap a card name to jump straight to it.</li><li>The full alphabetical index and the section colors remain the other two ways in.</li></ul></div>
   </div>
 </article>
-  <figure class="gwfig cm-fig"><figcaption class="xr-cap">Can’t‑miss patterns — recognition map<span style="display:block;font-weight:400;color:#5C6675;font-size:12px;margin-top:2px">See it → name the danger → act. Each node is a sentinel pattern — tap it to jump to the full card (workup + doses). Not exhaustive; the section cards remain the source of truth.</span></figcaption><svg xmlns="http://www.w3.org/2000/svg" viewBox="-975 -708 1950 1416" width="100%" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" role="img" aria-label="Can't-miss patterns recognition map">
+  <figure class="gwfig cm-fig"><figcaption class="xr-cap">Can’t‑miss patterns — recognition map<span style="display:block;font-weight:400;color:#5C6675;font-size:12px;margin-top:2px">See it → name the danger → act. Each branch ends in a sentinel pattern — tap it to jump to the full card (workup + doses). Not exhaustive; the section cards remain the source of truth.</span></figcaption><svg xmlns="http://www.w3.org/2000/svg" viewBox="-975 -708 1950 1416" width="100%" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" class="kpc-cm-mindmap" role="img" aria-label="Can't-miss patterns recognition map">
 <rect x="-975" y="-708" width="1950" height="1416" fill="#F6F7F9"/>
 <style>@media screen{
 .link{stroke-dasharray:1;stroke-dashoffset:1;animation:cmDraw .85s ease forwards}@keyframes cmDraw{to{stroke-dashoffset:0}}
-.ent{opacity:0;transform-box:fill-box;transform-origin:center;animation:cmRise .55s ease forwards}@keyframes cmRise{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
-a.node{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform .18s ease,filter .18s ease}
-a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.22))}
+.ent{opacity:0;animation:cmFade .6s ease forwards}@keyframes cmFade{to{opacity:1}}
+a.node{cursor:pointer}a.node:hover .lt{text-decoration:underline}a.node:hover .ul{stroke-width:6}
 .hub{transform-box:fill-box;transform-origin:center;animation:cmPulse 2.8s ease-in-out infinite}@keyframes cmPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-}@media(prefers-reduced-motion:reduce){.link,.ent{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}</style>
-<path class="link" pathLength="1" style="animation-delay:0.10s" d="M -140 0 C -197 0 -197 -489 -255 -489" stroke="#00838F" stroke-width="7" fill="none" opacity="0.5"/>
-<path class="link" pathLength="1" style="animation-delay:0.15s" d="M -445 -489 C -530 -489 -530 -608 -615 -608" stroke="#00838F" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.20s" d="M -445 -489 C -530 -489 -530 -488 -615 -488" stroke="#00838F" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.25s" d="M -445 -489 C -530 -489 -530 -372 -615 -372" stroke="#00838F" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.30s" d="M -140 0 C -197 0 -197 4 -255 4" stroke="#C62828" stroke-width="7" fill="none" opacity="0.5"/>
-<path class="link" pathLength="1" style="animation-delay:0.35s" d="M -445 4 C -530 4 -530 -200 -615 -200" stroke="#C62828" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.40s" d="M -445 4 C -530 4 -530 -64 -615 -64" stroke="#C62828" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.45s" d="M -445 4 C -530 4 -530 72 -615 72" stroke="#C62828" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.50s" d="M -445 4 C -530 4 -530 208 -615 208" stroke="#C62828" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.55s" d="M -140 0 C -197 0 -197 530 -255 530" stroke="#E65100" stroke-width="7" fill="none" opacity="0.5"/>
-<path class="link" pathLength="1" style="animation-delay:0.60s" d="M -445 530 C -530 530 -530 396 -615 396" stroke="#E65100" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.65s" d="M -445 530 C -530 530 -530 540 -615 540" stroke="#E65100" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.70s" d="M -445 530 C -530 530 -530 656 -615 656" stroke="#E65100" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.75s" d="M 140 0 C 197 0 197 -341 255 -341" stroke="#6A1B9A" stroke-width="7" fill="none" opacity="0.5"/>
-<path class="link" pathLength="1" style="animation-delay:0.80s" d="M 445 -341 C 530 -341 530 -540 615 -540" stroke="#6A1B9A" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.85s" d="M 445 -341 C 530 -341 530 -408 615 -408" stroke="#6A1B9A" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.90s" d="M 445 -341 C 530 -341 530 -276 615 -276" stroke="#6A1B9A" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:0.95s" d="M 445 -341 C 530 -341 530 -140 615 -140" stroke="#6A1B9A" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:1.00s" d="M 140 0 C 197 0 197 300 255 300" stroke="#8D6E63" stroke-width="7" fill="none" opacity="0.5"/>
-<path class="link" pathLength="1" style="animation-delay:1.05s" d="M 445 300 C 530 300 530 48 615 48" stroke="#8D6E63" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:1.10s" d="M 445 300 C 530 300 530 192 615 192" stroke="#8D6E63" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:1.15s" d="M 445 300 C 530 300 530 308 615 308" stroke="#8D6E63" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:1.20s" d="M 445 300 C 530 300 530 412 615 412" stroke="#8D6E63" stroke-width="3.2" fill="none" opacity="0.45"/>
-<path class="link" pathLength="1" style="animation-delay:1.25s" d="M 445 300 C 530 300 530 544 615 544" stroke="#8D6E63" stroke-width="3.2" fill="none" opacity="0.45"/>
-<a class="node" href="#c-neonatal-and-infant-chd"><g class="ent" style="animation-delay:0.50s">
-<rect x="-945" y="-668" width="330" height="120" rx="16" fill="#fff" stroke="#00838F" stroke-width="2.6"/>
-<rect x="-945" y="-668" width="9" height="120" rx="4.5" fill="#00838F"/>
-<text x="-776" y="-630" text-anchor="middle" font-size="28" font-weight="800" fill="#00838F">Duct‑dependent CHD</text>
-<text x="-776" y="-598" text-anchor="middle" font-size="28" font-weight="800" fill="#00838F">/ IEM</text>
-<text x="-776" y="-570" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Neonate collapse / shock</text>
-</g></a>
-<a class="node" href="#c-critical-chd-pulse-oximetry-screening"><g class="ent" style="animation-delay:0.55s">
-<rect x="-945" y="-532" width="330" height="88" rx="16" fill="#fff" stroke="#00838F" stroke-width="2.6"/>
-<rect x="-945" y="-532" width="9" height="88" rx="4.5" fill="#00838F"/>
-<text x="-776" y="-494" text-anchor="middle" font-size="28" font-weight="800" fill="#00838F">Cyanotic CHD</text>
-<text x="-776" y="-466" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Cyanosis unresponsive to O₂</text>
-</g></a>
-<a class="node" href="#c-myocarditis-acute-heart-failure"><g class="ent" style="animation-delay:0.60s">
-<rect x="-945" y="-428" width="330" height="112" rx="16" fill="#fff" stroke="#00838F" stroke-width="2.6"/>
-<rect x="-945" y="-428" width="9" height="112" rx="4.5" fill="#00838F"/>
-<text x="-776" y="-390" text-anchor="middle" font-size="28" font-weight="800" fill="#00838F">Myocarditis</text>
-<text x="-776" y="-362" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Tachycardia + gallop,</text>
-<text x="-776" y="-338" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">hepatomegaly</text>
-</g></a>
-<a class="node" href="#c-septic-shock"><g class="ent" style="animation-delay:0.65s">
-<rect x="-945" y="-260" width="330" height="120" rx="16" fill="#fff" stroke="#C62828" stroke-width="2.6"/>
-<rect x="-945" y="-260" width="9" height="120" rx="4.5" fill="#C62828"/>
-<text x="-776" y="-222" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">Meningococcal</text>
-<text x="-776" y="-190" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">sepsis</text>
-<text x="-776" y="-162" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Fever + non‑blanching rash</text>
-</g></a>
-<a class="node" href="#c-fever-in-the-young-infant"><g class="ent" style="animation-delay:0.70s">
-<rect x="-945" y="-124" width="330" height="120" rx="16" fill="#fff" stroke="#C62828" stroke-width="2.6"/>
-<rect x="-945" y="-124" width="9" height="120" rx="4.5" fill="#C62828"/>
-<text x="-776" y="-86" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">Serious bacterial</text>
-<text x="-776" y="-54" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">infection</text>
-<text x="-776" y="-26" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Fever, infant &lt; 90 days</text>
-</g></a>
-<a class="node" href="#c-immune-thrombocytopenia"><g class="ent" style="animation-delay:0.75s">
-<rect x="-945" y="12" width="330" height="120" rx="16" fill="#fff" stroke="#C62828" stroke-width="2.6"/>
-<rect x="-945" y="12" width="9" height="120" rx="4.5" fill="#C62828"/>
-<text x="-776" y="50" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">ITP vs</text>
-<text x="-776" y="82" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">meningococcemia</text>
-<text x="-776" y="110" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Petechiae — well or unwell?</text>
-</g></a>
-<a class="node" href="#c-retropharyngeal-abscess"><g class="ent" style="animation-delay:0.80s">
-<rect x="-945" y="148" width="330" height="120" rx="16" fill="#fff" stroke="#C62828" stroke-width="2.6"/>
-<rect x="-945" y="148" width="9" height="120" rx="4.5" fill="#C62828"/>
-<text x="-776" y="186" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">Epiglottitis /</text>
-<text x="-776" y="218" text-anchor="middle" font-size="28" font-weight="800" fill="#C62828">deep‑neck</text>
-<text x="-776" y="246" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Drooling + tripod + stridor</text>
-</g></a>
-<a class="node" href="#c-malrotation-midgut-volvulus"><g class="ent" style="animation-delay:0.85s">
-<rect x="-945" y="324" width="330" height="144" rx="16" fill="#fff" stroke="#E65100" stroke-width="2.6"/>
-<rect x="-945" y="324" width="9" height="144" rx="4.5" fill="#E65100"/>
-<text x="-776" y="362" text-anchor="middle" font-size="28" font-weight="800" fill="#E65100">Malrotation +</text>
-<text x="-776" y="394" text-anchor="middle" font-size="28" font-weight="800" fill="#E65100">volvulus</text>
-<text x="-776" y="422" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Bilious (green) vomiting,</text>
-<text x="-776" y="446" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">infant</text>
-</g></a>
-<a class="node" href="#c-testicular-torsion"><g class="ent" style="animation-delay:0.90s">
-<rect x="-945" y="484" width="330" height="112" rx="16" fill="#fff" stroke="#E65100" stroke-width="2.6"/>
-<rect x="-945" y="484" width="9" height="112" rx="4.5" fill="#E65100"/>
-<text x="-776" y="522" text-anchor="middle" font-size="28" font-weight="800" fill="#E65100">Testicular torsion</text>
-<text x="-776" y="550" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Acute scrotal pain /</text>
-<text x="-776" y="574" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">swelling</text>
-</g></a>
-<a class="node" href="#c-button-lithium-battery-ingestion"><g class="ent" style="animation-delay:0.95s">
-<rect x="-945" y="612" width="330" height="88" rx="16" fill="#fff" stroke="#E65100" stroke-width="2.6"/>
-<rect x="-945" y="612" width="9" height="88" rx="4.5" fill="#E65100"/>
-<text x="-776" y="650" text-anchor="middle" font-size="28" font-weight="800" fill="#E65100">Caustic injury</text>
-<text x="-776" y="678" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Button / lithium battery</text>
-</g></a>
-<a class="node" href="#c-raised-icp-the-comatose-child"><g class="ent" style="animation-delay:1.00s">
-<rect x="615" y="-600" width="330" height="120" rx="16" fill="#fff" stroke="#6A1B9A" stroke-width="2.6"/>
-<rect x="615" y="-600" width="9" height="120" rx="4.5" fill="#6A1B9A"/>
-<text x="784" y="-562" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">Raised ICP / brain</text>
-<text x="784" y="-530" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">tumor</text>
-<text x="784" y="-502" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Morning headache + vomiting</text>
-</g></a>
-<a class="node" href="#c-new-diagnosis-oncologic-emergencies"><g class="ent" style="animation-delay:1.05s">
-<rect x="615" y="-464" width="330" height="112" rx="16" fill="#fff" stroke="#6A1B9A" stroke-width="2.6"/>
-<rect x="615" y="-464" width="9" height="112" rx="4.5" fill="#6A1B9A"/>
-<text x="784" y="-426" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">Cord compression</text>
-<text x="784" y="-398" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Night back pain + leg</text>
-<text x="784" y="-374" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">weakness</text>
-</g></a>
-<a class="node" href="#c-neuromuscular-disease-acute-emergencies"><g class="ent" style="animation-delay:1.10s">
-<rect x="615" y="-336" width="330" height="120" rx="16" fill="#fff" stroke="#6A1B9A" stroke-width="2.6"/>
-<rect x="615" y="-336" width="9" height="120" rx="4.5" fill="#6A1B9A"/>
-<text x="784" y="-298" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">Neuromuscular /</text>
-<text x="784" y="-266" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">botulism</text>
-<text x="784" y="-238" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Floppy infant, weak cry</text>
-</g></a>
-<a class="node" href="#c-hypertensive-emergency"><g class="ent" style="animation-delay:1.15s">
-<rect x="615" y="-200" width="330" height="120" rx="16" fill="#fff" stroke="#6A1B9A" stroke-width="2.6"/>
-<rect x="615" y="-200" width="9" height="120" rx="4.5" fill="#6A1B9A"/>
-<text x="784" y="-162" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">Hypertensive</text>
-<text x="784" y="-130" text-anchor="middle" font-size="28" font-weight="800" fill="#6A1B9A">emergency</text>
-<text x="784" y="-102" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Very high BP + seizure</text>
-</g></a>
-<a class="node" href="#c-diabetic-ketoacidosis"><g class="ent" style="animation-delay:1.20s">
-<rect x="615" y="-24" width="330" height="144" rx="16" fill="#fff" stroke="#8D6E63" stroke-width="2.6"/>
-<rect x="615" y="-24" width="9" height="144" rx="4.5" fill="#8D6E63"/>
-<text x="784" y="14" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">DKA ± cerebral</text>
-<text x="784" y="46" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">edema</text>
-<text x="784" y="74" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Vomiting + polyuria + high</text>
-<text x="784" y="98" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">glucose</text>
-</g></a>
-<a class="node" href="#c-transient-synovitis-vs-septic-arthritis"><g class="ent" style="animation-delay:1.25s">
-<rect x="615" y="136" width="330" height="112" rx="16" fill="#fff" stroke="#8D6E63" stroke-width="2.6"/>
-<rect x="615" y="136" width="9" height="112" rx="4.5" fill="#8D6E63"/>
-<text x="784" y="174" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">Septic arthritis</text>
-<text x="784" y="202" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Limp + fever, won't bear</text>
-<text x="784" y="226" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">weight</text>
-</g></a>
-<a class="node" href="#c-sickle-cell-crises"><g class="ent" style="animation-delay:1.30s">
-<rect x="615" y="264" width="330" height="88" rx="16" fill="#fff" stroke="#8D6E63" stroke-width="2.6"/>
-<rect x="615" y="264" width="9" height="88" rx="4.5" fill="#8D6E63"/>
-<text x="784" y="302" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">Acute hemolysis</text>
-<text x="784" y="330" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Sudden pallor + jaundice</text>
-</g></a>
-<a class="node" href="#c-child-protection-safeguarding"><g class="ent" style="animation-delay:1.35s">
-<rect x="615" y="368" width="330" height="88" rx="16" fill="#fff" stroke="#8D6E63" stroke-width="2.6"/>
-<rect x="615" y="368" width="9" height="88" rx="4.5" fill="#8D6E63"/>
-<text x="784" y="406" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">Inflicted injury</text>
-<text x="784" y="434" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">Bruise, non‑mobile infant</text>
-</g></a>
-<a class="node" href="#c-gastroenteritis-and-dehydration"><g class="ent" style="animation-delay:1.40s">
-<rect x="615" y="472" width="330" height="144" rx="16" fill="#fff" stroke="#8D6E63" stroke-width="2.6"/>
-<rect x="615" y="472" width="9" height="144" rx="4.5" fill="#8D6E63"/>
-<text x="784" y="510" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">Reconsider</text>
-<text x="784" y="542" text-anchor="middle" font-size="28" font-weight="800" fill="#8D6E63">diagnosis</text>
-<text x="784" y="570" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">“Gastroenteritis”, no</text>
-<text x="784" y="594" text-anchor="middle" font-size="21" font-weight="500" fill="#55606C">diarrhea</text>
-</g></a>
-<g><rect x="-445" y="-522" width="190" height="66" rx="33" fill="#00838F"/>
-<text x="-350" y="-495" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">Heart /</text>
-<text x="-350" y="-471" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">neonate</text>
-</g>
-<g><rect x="-445" y="-29" width="190" height="66" rx="33" fill="#C62828"/>
-<text x="-350" y="-2" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">Fever, rash &amp;</text>
-<text x="-350" y="22" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">sepsis</text>
-</g>
-<g><rect x="-445" y="497" width="190" height="66" rx="33" fill="#E65100"/>
-<text x="-350" y="524" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">Surgical /</text>
-<text x="-350" y="548" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">abdomen</text>
-</g>
-<g><rect x="255" y="-374" width="190" height="66" rx="33" fill="#6A1B9A"/>
-<text x="350" y="-347" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">Brain, cord &amp;</text>
-<text x="350" y="-323" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">BP</text>
-</g>
-<g><rect x="255" y="267" width="190" height="66" rx="33" fill="#8D6E63"/>
-<text x="350" y="294" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">Metabolic,</text>
-<text x="350" y="318" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">bone &amp; blood</text>
-</g>
-<g class="hub"><circle cx="0" cy="0" r="140" fill="#0F1720"/><circle cx="0" cy="0" r="140" fill="none" stroke="#fff" stroke-width="3" opacity="0.22"/><text x="0" y="-14" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" letter-spacing="1">CAN'T‑MISS</text><text x="0" y="22" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" letter-spacing="1">PATTERNS</text><text x="0" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="#9AA5B1" letter-spacing="2">SEE → NAME → ACT</text></g>
+}@media(prefers-reduced-motion:reduce){.link,.ent,.hub{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}</style>
+<defs><path id="cmb0" d="M -455.0 -439.0 C -285.0 -439.0 -230.0 -70.0 -90.0 -70.0"/><path id="cmb1" d="M -455.0 8.0 C -285.0 8.0 -230.0 1.4 -90.0 1.4"/><path id="cmb2" d="M -455.0 455.0 C -285.0 455.0 -230.0 70.0 -90.0 70.0"/><path id="cmb3" d="M 90.0 -54.7 C 230.0 -54.7 285.0 -304.0 455.0 -304.0"/><path id="cmb4" d="M 90.0 47.0 C 230.0 47.0 285.0 261.0 455.0 261.0"/></defs>
+<path class="link" pathLength="1" style="animation-delay:0.15s" d="M -455.0 -439.0 C -525.0 -439.0 -515.0 -557.0 -585.0 -557.0" stroke="#00838F" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.20s" d="M -455.0 -439.0 C -525.0 -439.0 -515.0 -439.0 -585.0 -439.0" stroke="#00838F" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.25s" d="M -455.0 -439.0 C -525.0 -439.0 -515.0 -321.0 -585.0 -321.0" stroke="#00838F" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.35s" d="M -455.0 8.0 C -525.0 8.0 -515.0 -169.0 -585.0 -169.0" stroke="#C62828" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.40s" d="M -455.0 8.0 C -525.0 8.0 -515.0 -51.0 -585.0 -51.0" stroke="#C62828" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.45s" d="M -455.0 8.0 C -525.0 8.0 -515.0 67.0 -585.0 67.0" stroke="#C62828" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.50s" d="M -455.0 8.0 C -525.0 8.0 -515.0 185.0 -585.0 185.0" stroke="#C62828" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.60s" d="M -455.0 455.0 C -525.0 455.0 -515.0 337.0 -585.0 337.0" stroke="#E65100" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.65s" d="M -455.0 455.0 C -525.0 455.0 -515.0 455.0 -585.0 455.0" stroke="#E65100" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.70s" d="M -455.0 455.0 C -525.0 455.0 -515.0 573.0 -585.0 573.0" stroke="#E65100" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.80s" d="M 455.0 -304.0 C 525.0 -304.0 515.0 -481.0 585.0 -481.0" stroke="#6A1B9A" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.85s" d="M 455.0 -304.0 C 525.0 -304.0 515.0 -363.0 585.0 -363.0" stroke="#6A1B9A" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.90s" d="M 455.0 -304.0 C 525.0 -304.0 515.0 -245.0 585.0 -245.0" stroke="#6A1B9A" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:0.95s" d="M 455.0 -304.0 C 525.0 -304.0 515.0 -127.0 585.0 -127.0" stroke="#6A1B9A" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:1.05s" d="M 455.0 261.0 C 525.0 261.0 515.0 25.0 585.0 25.0" stroke="#8D6E63" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:1.10s" d="M 455.0 261.0 C 525.0 261.0 515.0 143.0 585.0 143.0" stroke="#8D6E63" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:1.15s" d="M 455.0 261.0 C 525.0 261.0 515.0 261.0 585.0 261.0" stroke="#8D6E63" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:1.20s" d="M 455.0 261.0 C 525.0 261.0 515.0 379.0 585.0 379.0" stroke="#8D6E63" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="link" pathLength="1" style="animation-delay:1.25s" d="M 455.0 261.0 C 525.0 261.0 515.0 497.0 585.0 497.0" stroke="#8D6E63" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path class="ent" style="animation-delay:0.10s" d="M-89.0 -85.0 L-98.4 -85.3 L-106.7 -86.7 L-114.9 -89.1 L-123.1 -92.7 L-131.4 -97.3 L-139.6 -103.0 L-147.9 -109.7 L-156.1 -117.3 L-164.3 -125.9 L-172.5 -135.4 L-180.6 -145.6 L-188.7 -156.4 L-196.7 -167.9 L-204.7 -180.0 L-212.7 -192.5 L-220.7 -205.4 L-228.7 -218.6 L-236.7 -232.0 L-244.7 -245.6 L-252.8 -259.3 L-260.9 -273.1 L-269.2 -286.7 L-277.5 -300.3 L-286.0 -313.7 L-294.6 -326.8 L-303.4 -339.6 L-312.4 -352.0 L-321.6 -364.0 L-331.0 -375.3 L-340.7 -386.1 L-350.6 -396.2 L-360.8 -405.5 L-371.3 -414.0 L-382.2 -421.6 L-393.4 -428.2 L-405.0 -433.7 L-416.9 -438.1 L-429.3 -441.2 L-441.9 -443.1 L-454.8 -443.5 L-455.2 -434.5 L-443.0 -433.6 L-431.4 -431.4 L-420.3 -428.1 L-409.5 -423.6 L-399.1 -418.1 L-389.0 -411.5 L-379.2 -404.1 L-369.6 -395.7 L-360.3 -386.5 L-351.2 -376.6 L-342.4 -365.9 L-333.7 -354.6 L-325.2 -342.8 L-316.9 -330.4 L-308.8 -317.7 L-300.8 -304.5 L-292.9 -291.1 L-285.1 -277.4 L-277.4 -263.6 L-269.7 -249.7 L-262.1 -235.7 L-254.5 -221.8 L-246.9 -208.0 L-239.3 -194.4 L-231.7 -181.0 L-223.9 -168.0 L-216.1 -155.2 L-208.2 -143.0 L-200.1 -131.2 L-191.9 -119.9 L-183.4 -109.3 L-174.7 -99.4 L-165.6 -90.2 L-156.3 -81.9 L-146.5 -74.4 L-136.2 -68.0 L-125.4 -62.7 L-114.1 -58.7 L-102.3 -56.1 L-91.0 -55.0 Z" fill="#00838F" opacity="0.92"/>
+<path class="ent" style="animation-delay:0.30s" d="M-90.0 -13.6 L-100.4 -13.3 L-110.5 -13.0 L-120.3 -12.7 L-129.8 -12.3 L-139.1 -12.0 L-148.1 -11.6 L-157.0 -11.2 L-165.6 -10.8 L-174.1 -10.3 L-182.5 -9.9 L-190.7 -9.5 L-198.8 -9.0 L-206.7 -8.5 L-214.7 -8.0 L-222.5 -7.5 L-230.3 -7.0 L-238.1 -6.5 L-245.9 -6.0 L-253.7 -5.5 L-261.6 -5.0 L-269.4 -4.5 L-277.4 -4.0 L-285.5 -3.5 L-293.6 -3.0 L-302.0 -2.5 L-310.4 -2.0 L-319.0 -1.5 L-327.8 -1.1 L-336.8 -0.6 L-346.1 -0.1 L-355.6 0.3 L-365.3 0.7 L-375.3 1.1 L-385.7 1.5 L-396.3 1.9 L-407.3 2.3 L-418.6 2.6 L-430.4 2.9 L-442.5 3.2 L-455.0 3.5 L-455.0 12.5 L-442.5 12.8 L-430.3 13.0 L-418.6 13.2 L-407.2 13.4 L-396.2 13.5 L-385.5 13.7 L-375.2 13.8 L-365.1 13.9 L-355.3 14.0 L-345.8 14.1 L-336.5 14.2 L-327.5 14.2 L-318.6 14.3 L-310.0 14.3 L-301.5 14.4 L-293.2 14.4 L-284.9 14.4 L-276.9 14.4 L-268.9 14.4 L-260.9 14.5 L-253.1 14.5 L-245.3 14.5 L-237.5 14.5 L-229.7 14.5 L-221.9 14.6 L-214.0 14.6 L-206.1 14.7 L-198.1 14.7 L-190.1 14.8 L-181.9 14.8 L-173.6 14.9 L-165.2 15.0 L-156.5 15.1 L-147.7 15.3 L-138.7 15.4 L-129.5 15.6 L-120.0 15.8 L-110.3 16.0 L-100.3 16.2 L-90.0 16.4 Z" fill="#C62828" opacity="0.92"/>
+<path class="ent" style="animation-delay:0.55s" d="M-91.0 55.0 L-102.3 56.1 L-114.2 58.8 L-125.6 63.0 L-136.4 68.6 L-146.7 75.3 L-156.5 83.0 L-165.8 91.7 L-174.9 101.3 L-183.6 111.6 L-192.0 122.6 L-200.3 134.3 L-208.3 146.6 L-216.2 159.4 L-224.0 172.6 L-231.8 186.3 L-239.4 200.2 L-247.0 214.4 L-254.6 228.8 L-262.2 243.3 L-269.8 257.8 L-277.5 272.3 L-285.2 286.8 L-293.0 301.0 L-300.9 315.0 L-308.9 328.7 L-317.0 342.1 L-325.3 354.9 L-333.8 367.3 L-342.5 379.1 L-351.3 390.2 L-360.4 400.6 L-369.7 410.1 L-379.3 418.8 L-389.1 426.6 L-399.2 433.4 L-409.6 439.2 L-420.3 443.8 L-431.5 447.3 L-443.0 449.6 L-455.3 450.5 L-454.7 459.5 L-441.9 459.0 L-429.2 457.1 L-416.9 453.8 L-404.9 449.3 L-393.3 443.5 L-382.1 436.6 L-371.2 428.7 L-360.7 419.8 L-350.5 410.0 L-340.6 399.5 L-330.9 388.3 L-321.5 376.4 L-312.3 363.9 L-303.3 351.0 L-294.5 337.6 L-285.9 323.9 L-277.4 310.0 L-269.1 295.8 L-260.9 281.5 L-252.7 267.2 L-244.6 252.9 L-236.6 238.6 L-228.6 224.6 L-220.6 210.8 L-212.6 197.4 L-204.6 184.3 L-196.6 171.7 L-188.6 159.7 L-180.5 148.3 L-172.3 137.7 L-164.2 127.8 L-155.9 118.8 L-147.7 110.8 L-139.4 103.8 L-131.1 97.8 L-122.9 93.0 L-114.7 89.3 L-106.5 86.7 L-98.3 85.3 L-89.0 85.0 Z" fill="#E65100" opacity="0.92"/>
+<path class="ent" style="animation-delay:0.75s" d="M90.7 -39.7 L101.6 -40.5 L112.9 -42.3 L123.8 -45.0 L134.4 -48.6 L144.5 -52.9 L154.3 -58.0 L163.7 -63.8 L172.8 -70.1 L181.6 -76.9 L190.2 -84.2 L198.6 -92.0 L206.7 -100.1 L214.8 -108.5 L222.6 -117.3 L230.4 -126.2 L238.1 -135.4 L245.8 -144.7 L253.4 -154.1 L261.1 -163.6 L268.7 -173.1 L276.4 -182.5 L284.1 -191.9 L291.9 -201.2 L299.8 -210.4 L307.8 -219.3 L315.9 -228.0 L324.2 -236.4 L332.7 -244.4 L341.3 -252.1 L350.2 -259.3 L359.3 -266.1 L368.6 -272.4 L378.2 -278.2 L388.1 -283.3 L398.3 -287.8 L408.8 -291.7 L419.8 -294.8 L431.1 -297.2 L442.8 -298.8 L455.2 -299.5 L454.8 -308.5 L442.1 -308.3 L429.6 -307.2 L417.5 -305.2 L405.7 -302.3 L394.2 -298.7 L383.1 -294.4 L372.3 -289.4 L361.8 -283.7 L351.6 -277.5 L341.7 -270.8 L332.0 -263.5 L322.6 -255.9 L313.4 -247.9 L304.4 -239.6 L295.6 -231.0 L287.0 -222.1 L278.5 -213.2 L270.2 -204.0 L261.9 -194.9 L253.8 -185.6 L245.7 -176.5 L237.7 -167.4 L229.8 -158.4 L221.9 -149.6 L213.9 -141.0 L206.0 -132.7 L198.1 -124.7 L190.2 -117.0 L182.2 -109.8 L174.2 -103.1 L166.1 -96.9 L158.0 -91.2 L149.8 -86.2 L141.6 -81.7 L133.3 -77.9 L124.9 -74.8 L116.5 -72.4 L107.8 -70.8 L99.0 -69.9 L89.3 -69.7 Z" fill="#6A1B9A" opacity="0.92"/>
+<path class="ent" style="animation-delay:1.00s" d="M89.4 62.0 L99.2 62.1 L108.2 62.8 L117.0 64.3 L125.6 66.3 L134.0 69.0 L142.4 72.2 L150.6 76.0 L158.8 80.3 L166.9 85.1 L174.9 90.4 L182.9 96.2 L190.8 102.3 L198.7 108.8 L206.6 115.6 L214.5 122.7 L222.4 130.0 L230.3 137.5 L238.3 145.2 L246.2 153.0 L254.3 160.8 L262.4 168.7 L270.7 176.5 L279.0 184.3 L287.5 192.0 L296.1 199.6 L304.9 206.9 L313.9 214.0 L323.0 220.9 L332.4 227.4 L342.1 233.6 L352.0 239.3 L362.2 244.6 L372.6 249.4 L383.4 253.7 L394.5 257.3 L405.9 260.4 L417.6 262.8 L429.7 264.4 L442.2 265.4 L454.9 265.5 L455.1 256.5 L442.8 255.9 L431.0 254.5 L419.6 252.4 L408.6 249.6 L398.0 246.3 L387.8 242.3 L377.9 237.9 L368.2 232.9 L358.9 227.4 L349.8 221.6 L340.9 215.3 L332.3 208.7 L323.8 201.7 L315.5 194.5 L307.3 187.0 L299.3 179.3 L291.4 171.4 L283.6 163.4 L275.9 155.3 L268.2 147.2 L260.6 139.0 L252.9 130.8 L245.3 122.7 L237.6 114.6 L229.8 106.7 L222.0 99.0 L214.1 91.4 L206.1 84.1 L197.9 77.1 L189.5 70.4 L180.9 64.1 L172.0 58.2 L162.9 52.7 L153.5 47.8 L143.8 43.4 L133.7 39.6 L123.3 36.6 L112.6 34.2 L101.5 32.7 L90.6 32.0 Z" fill="#8D6E63" opacity="0.92"/>
+<text class="ent" style="animation-delay:0.15s" font-size="23" font-weight="800" fill="#00838F" letter-spacing=".5"><textPath href="#cmb0" startOffset="38%" text-anchor="middle"><tspan dy="-22">HEART / NEONATE</tspan></textPath></text>
+<text class="ent" style="animation-delay:0.35s" font-size="23" font-weight="800" fill="#C62828" letter-spacing=".5"><textPath href="#cmb1" startOffset="38%" text-anchor="middle"><tspan dy="-22">FEVER, RASH &AMP; SEPSIS</tspan></textPath></text>
+<text class="ent" style="animation-delay:0.60s" font-size="23" font-weight="800" fill="#E65100" letter-spacing=".5"><textPath href="#cmb2" startOffset="38%" text-anchor="middle"><tspan dy="-22">SURGICAL / ABDOMEN</tspan></textPath></text>
+<text class="ent" style="animation-delay:0.80s" font-size="23" font-weight="800" fill="#6A1B9A" letter-spacing=".5"><textPath href="#cmb3" startOffset="62%" text-anchor="middle"><tspan dy="-22">BRAIN, CORD &AMP; BP</tspan></textPath></text>
+<text class="ent" style="animation-delay:1.05s" font-size="20" font-weight="800" fill="#8D6E63" letter-spacing=".5"><textPath href="#cmb4" startOffset="62%" text-anchor="middle"><tspan dy="-22">METABOLIC, BONE &AMP; BLOOD</tspan></textPath></text>
+<a class="node" href="#c-neonatal-and-infant-chd"><g class="ent" style="animation-delay:0.30s"><rect x="-960" y="-605" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 -557.0 H -960.0" stroke="#00838F" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="-557.0" r="7" fill="#00838F"/><text class="lt" x="-593.0" y="-569.0" text-anchor="end" font-size="26" font-weight="800" fill="#00838F">Duct‑dependent CHD / IEM</text><text x="-593.0" y="-530.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Neonate collapse / shock</text></g></a>
+<a class="node" href="#c-critical-chd-pulse-oximetry-screening"><g class="ent" style="animation-delay:0.35s"><rect x="-960" y="-487" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 -439.0 H -960.0" stroke="#00838F" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="-439.0" r="7" fill="#00838F"/><text class="lt" x="-593.0" y="-451.0" text-anchor="end" font-size="26" font-weight="800" fill="#00838F">Cyanotic CHD</text><text x="-593.0" y="-412.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Cyanosis unresponsive to O₂</text></g></a>
+<a class="node" href="#c-myocarditis-acute-heart-failure"><g class="ent" style="animation-delay:0.40s"><rect x="-960" y="-369" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 -321.0 H -960.0" stroke="#00838F" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="-321.0" r="7" fill="#00838F"/><text class="lt" x="-593.0" y="-333.0" text-anchor="end" font-size="26" font-weight="800" fill="#00838F">Myocarditis</text><text x="-593.0" y="-294.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Tachycardia + gallop, hepatomegaly</text></g></a>
+<a class="node" href="#c-septic-shock"><g class="ent" style="animation-delay:0.50s"><rect x="-960" y="-217" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 -169.0 H -960.0" stroke="#C62828" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="-169.0" r="7" fill="#C62828"/><text class="lt" x="-593.0" y="-181.0" text-anchor="end" font-size="26" font-weight="800" fill="#C62828">Meningococcal sepsis</text><text x="-593.0" y="-142.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Fever + non‑blanching rash</text></g></a>
+<a class="node" href="#c-fever-in-the-young-infant"><g class="ent" style="animation-delay:0.55s"><rect x="-960" y="-99" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 -51.0 H -960.0" stroke="#C62828" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="-51.0" r="7" fill="#C62828"/><text class="lt" x="-593.0" y="-63.0" text-anchor="end" font-size="23" font-weight="800" fill="#C62828">Serious bacterial infection</text><text x="-593.0" y="-24.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Fever, infant &lt; 90 days</text></g></a>
+<a class="node" href="#c-immune-thrombocytopenia"><g class="ent" style="animation-delay:0.60s"><rect x="-960" y="19" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 67.0 H -960.0" stroke="#C62828" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="67.0" r="7" fill="#C62828"/><text class="lt" x="-593.0" y="55.0" text-anchor="end" font-size="26" font-weight="800" fill="#C62828">ITP vs meningococcemia</text><text x="-593.0" y="94.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Petechiae — well or unwell?</text></g></a>
+<a class="node" href="#c-retropharyngeal-abscess"><g class="ent" style="animation-delay:0.65s"><rect x="-960" y="137" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 185.0 H -960.0" stroke="#C62828" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="185.0" r="7" fill="#C62828"/><text class="lt" x="-593.0" y="173.0" text-anchor="end" font-size="26" font-weight="800" fill="#C62828">Epiglottitis / deep‑neck</text><text x="-593.0" y="212.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Drooling + tripod + stridor</text></g></a>
+<a class="node" href="#c-malrotation-midgut-volvulus"><g class="ent" style="animation-delay:0.75s"><rect x="-960" y="289" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 337.0 H -960.0" stroke="#E65100" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="337.0" r="7" fill="#E65100"/><text class="lt" x="-593.0" y="325.0" text-anchor="end" font-size="26" font-weight="800" fill="#E65100">Malrotation + volvulus</text><text x="-593.0" y="364.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Bilious (green) vomiting, infant</text></g></a>
+<a class="node" href="#c-testicular-torsion"><g class="ent" style="animation-delay:0.80s"><rect x="-960" y="407" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 455.0 H -960.0" stroke="#E65100" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="455.0" r="7" fill="#E65100"/><text class="lt" x="-593.0" y="443.0" text-anchor="end" font-size="26" font-weight="800" fill="#E65100">Testicular torsion</text><text x="-593.0" y="482.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Acute scrotal pain / swelling</text></g></a>
+<a class="node" href="#c-button-lithium-battery-ingestion"><g class="ent" style="animation-delay:0.85s"><rect x="-960" y="525" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M -585.0 573.0 H -960.0" stroke="#E65100" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="-585.0" cy="573.0" r="7" fill="#E65100"/><text class="lt" x="-593.0" y="561.0" text-anchor="end" font-size="26" font-weight="800" fill="#E65100">Caustic injury</text><text x="-593.0" y="600.0" text-anchor="end" font-size="19" font-weight="500" fill="#55606C">Button / lithium battery</text></g></a>
+<a class="node" href="#c-raised-icp-the-comatose-child"><g class="ent" style="animation-delay:0.95s"><rect x="585" y="-529" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 -481.0 H 960.0" stroke="#6A1B9A" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="-481.0" r="7" fill="#6A1B9A"/><text class="lt" x="593.0" y="-493.0" text-anchor="start" font-size="26" font-weight="800" fill="#6A1B9A">Raised ICP / brain tumor</text><text x="593.0" y="-454.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Morning headache + vomiting</text></g></a>
+<a class="node" href="#c-new-diagnosis-oncologic-emergencies"><g class="ent" style="animation-delay:1.00s"><rect x="585" y="-411" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 -363.0 H 960.0" stroke="#6A1B9A" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="-363.0" r="7" fill="#6A1B9A"/><text class="lt" x="593.0" y="-375.0" text-anchor="start" font-size="26" font-weight="800" fill="#6A1B9A">Cord compression</text><text x="593.0" y="-336.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Night back pain + leg weakness</text></g></a>
+<a class="node" href="#c-neuromuscular-disease-acute-emergencies"><g class="ent" style="animation-delay:1.05s"><rect x="585" y="-293" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 -245.0 H 960.0" stroke="#6A1B9A" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="-245.0" r="7" fill="#6A1B9A"/><text class="lt" x="593.0" y="-257.0" text-anchor="start" font-size="26" font-weight="800" fill="#6A1B9A">Neuromuscular / botulism</text><text x="593.0" y="-218.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Floppy infant, weak cry</text></g></a>
+<a class="node" href="#c-hypertensive-emergency"><g class="ent" style="animation-delay:1.10s"><rect x="585" y="-175" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 -127.0 H 960.0" stroke="#6A1B9A" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="-127.0" r="7" fill="#6A1B9A"/><text class="lt" x="593.0" y="-139.0" text-anchor="start" font-size="26" font-weight="800" fill="#6A1B9A">Hypertensive emergency</text><text x="593.0" y="-100.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Very high BP + seizure</text></g></a>
+<a class="node" href="#c-diabetic-ketoacidosis"><g class="ent" style="animation-delay:1.20s"><rect x="585" y="-23" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 25.0 H 960.0" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="25.0" r="7" fill="#8D6E63"/><text class="lt" x="593.0" y="13.0" text-anchor="start" font-size="26" font-weight="800" fill="#8D6E63">DKA ± cerebral edema</text><text x="593.0" y="52.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Vomiting + polyuria + high glucose</text></g></a>
+<a class="node" href="#c-transient-synovitis-vs-septic-arthritis"><g class="ent" style="animation-delay:1.25s"><rect x="585" y="95" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 143.0 H 960.0" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="143.0" r="7" fill="#8D6E63"/><text class="lt" x="593.0" y="131.0" text-anchor="start" font-size="26" font-weight="800" fill="#8D6E63">Septic arthritis</text><text x="593.0" y="170.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Limp + fever, won't bear weight</text></g></a>
+<a class="node" href="#c-sickle-cell-crises"><g class="ent" style="animation-delay:1.30s"><rect x="585" y="213" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 261.0 H 960.0" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="261.0" r="7" fill="#8D6E63"/><text class="lt" x="593.0" y="249.0" text-anchor="start" font-size="26" font-weight="800" fill="#8D6E63">Acute hemolysis</text><text x="593.0" y="288.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Sudden pallor + jaundice</text></g></a>
+<a class="node" href="#c-child-protection-safeguarding"><g class="ent" style="animation-delay:1.35s"><rect x="585" y="331" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 379.0 H 960.0" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="379.0" r="7" fill="#8D6E63"/><text class="lt" x="593.0" y="367.0" text-anchor="start" font-size="26" font-weight="800" fill="#8D6E63">Inflicted injury</text><text x="593.0" y="406.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">Bruise, non‑mobile infant</text></g></a>
+<a class="node" href="#c-gastroenteritis-and-dehydration"><g class="ent" style="animation-delay:1.40s"><rect x="585" y="449" width="375" height="84" fill="#F6F7F9" opacity="0"/><path class="ul" d="M 585.0 497.0 H 960.0" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="585.0" cy="497.0" r="7" fill="#8D6E63"/><text class="lt" x="593.0" y="485.0" text-anchor="start" font-size="26" font-weight="800" fill="#8D6E63">Reconsider diagnosis</text><text x="593.0" y="524.0" text-anchor="start" font-size="19" font-weight="500" fill="#55606C">“Gastroenteritis”, no diarrhea</text></g></a>
+<g class="hub"><circle cx="0" cy="0" r="132" fill="#0F1720"/><circle cx="0" cy="0" r="120" fill="none" stroke="#fff" stroke-width="2" opacity="0.18"/><text x="0" y="-14" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" letter-spacing="1">CAN'T‑MISS</text><text x="0" y="22" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" letter-spacing="1">PATTERNS</text><text x="0" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="#9AA5B1" letter-spacing="2">SEE → NAME → ACT</text></g>
 </svg>
 <div class="cm-list">
 <div class="cm-grp" style="--c:#00838F"><div class="cm-hub">Heart / neonate</div>
@@ -8584,7 +8456,7 @@ a.node:hover{transform:scale(1.05);filter:drop-shadow(0 8px 16px rgba(16,24,40,.
   <div class="wrap">
     <strong>Kuwait Pediatric Council</strong>
     <p>Neonatal &amp; pediatric acute care for pediatricians and primary care physicians.</p>
-    <div class="kpc-version" id="kpcVerFoot"><span class="kv-l">Version</span> <b class="kpc-vnum">1.85</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">9 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
+    <div class="kpc-version" id="kpcVerFoot"><span class="kv-l">Version</span> <b class="kpc-vnum">1.86</b><span class="kv-sep"> · </span><span class="kv-d">Updated <span class="kpc-vdate">9 October 2026</span></span><span class="kv-extra"><span class="kpc-visits" hidden></span></span></div>
       <ul><li>Issued October 2026 · review October 2029.</li><li>Compiled from current international guidelines; newer evidence takes precedence before renewal.</li><li>Verify all doses locally and follow Ministry of Health protocols.</li><li>Self‑contained single file — works offline once saved; print to PDF to distribute; add to the home screen for an app‑like experience.</li></ul>
   </div>
 </footer>
