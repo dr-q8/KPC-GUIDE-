@@ -1,0 +1,21 @@
+# Notify IndexNow search engines (Bing, Yandex, Naver, Seznam, Yep; DuckDuckGo/Yahoo use Bing) after each GitHub Pages build.
+name: IndexNow
+on:
+  page_build:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit kpc-guide.com URLs
+        env:
+          KEY: 950ba1541387a1f7a34bf633fd5982b3
+        run: |
+          sleep 60
+          BODY="{\"host\":\"kpc-guide.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://kpc-guide.com/$KEY.txt\",\"urlList\":[\"https://kpc-guide.com/\",\"https://kpc-guide.com/downloads/\"]}"
+          for ep in https://api.indexnow.org/indexnow https://www.bing.com/indexnow https://yandex.com/indexnow; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$ep" -H "Content-Type: application/json; charset=utf-8" -d "$BODY")
+            echo "$ep -> HTTP $code"
+          done
