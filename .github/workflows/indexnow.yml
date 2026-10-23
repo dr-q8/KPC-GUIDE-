@@ -17,5 +17,5 @@ jobs:
           BODY="{\"host\":\"kpc-guide.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://kpc-guide.com/$KEY.txt\",\"urlList\":[\"https://kpc-guide.com/\",\"https://kpc-guide.com/downloads/\"]}"
           for ep in https://api.indexnow.org/indexnow https://www.bing.com/indexnow https://yandex.com/indexnow; do
             code=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$ep" -H "Content-Type: application/json; charset=utf-8" -d "$BODY")
-            echo "$ep -> HTTP $code"
+            echo "::notice title=IndexNow::$ep -> HTTP $code"
           done
